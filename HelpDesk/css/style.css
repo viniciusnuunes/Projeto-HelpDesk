@@ -1,0 +1,13 @@
+.form-group {
+    text-align: center;
+}
+
+.jumbotron {
+    box-shadow: 1px 4px 20px 2px black;
+}
+
+// body {
+    background-image: url("../imagens/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

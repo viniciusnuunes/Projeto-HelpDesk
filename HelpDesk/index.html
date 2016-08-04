@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<link rel="stylesheet" href="js/script.js">
+	<link rel="stylesheet" href="css/style.css">
+	<title>HelpDesk</title>
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<div class="row">
+            <h2>
+                Cadastro de Atendimento
+                <small class="text-muted">HelpDesk</small>
+            </h2>
+            <br>
+            <form class="form" role="form">
+                <div class="form-group col-sm-2">
+                    <label>Colaborador</label> <br>
+                    <select class="form-control">
+                        <option>Adriano</option>
+                        <option>Iana</option>
+                        <option>Julia</option>
+                        <option>Pedro</option>
+                        <option>Vinicius</option>
+                        <option>Ygor</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-2">
+                    <label>Entrada</label> <br>
+                    <select class="form-control">
+                        <option>Demanda</option>
+                        <option>E-Mail</option>
+                        <option>Fresh Desk</option>
+                        <option>Spark</option>
+                        <option>Telefone</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-2">
+                    <label>Origem</label> <br>
+                    <select class="form-control">
+                        <option>Aluno</option>
+                        <option>MEDGRUPO</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-2">
+                    <label>Aplicação</label> <br>
+                    <select class="form-control">
+                        <option>Área Restrita</option>
+                        <option>MedSoft</option>
+                        <option>MedCode</option>
+                        <option>MedReader</option>
+                        <option>MedEletro</option>
+                        <option>MedCode/MedSoft</option>
+                        <option>MedReader/MedCode</option>
+                        <option>MedSoft/MedReader</option>
+                        <option>Restrita/MedReader</option>
+                        <option>Restrita/MedCode</option>
+                        <option>Restrita/MedSoft</option>
+                        <option>Todos</option>
+                        <option>Não informado</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-2">
+                    <label>Device</label> <br>
+                    <select class="form-control">
+                        <option>iPhone</option>
+                        <option>iPad</option>
+                        <option>Smartphone</option>
+                        <option>Tablet</option>
+                        <option>Computador Windows</option>
+                        <option>Computador Mac</option>
+                        <option>iPad/iPhone</option>
+                        <option>Smartphone/Tablet</option>
+                        <option>PC/iOS</option>
+                        <option>PC/Android</option>
+                        <option>Todos</option>
+                        <option>Não informado</option>
+                    </select>
+                </div>
+                <div class="form-group col-sm-2">
+                    <label>Status</label> <br>
+                    <select class="form-control">
+                        <option>Solucionado</option>
+                        <option>Pendente</option>
+                        <option>Parcial</option>
+                    </select>
+                </div>
+            </div>
+            <br>
+                <div class="row">
+                    <div class="form-group col-sm-3">
+                        <label>Problema</label> <br>
+                        <select class="form-control">
+                            <option>XXXXXX</option>
+                            <option>XXXXXX</option>
+                            <option>XXXXXX</option>
+                            <option>XXXXXX</option>
+                            <option>XXXXXX</option>
+                            <option>XXXXXX</option>
+                            <option>XXXXXX</option>
+                            <option>XXXXXX</option>
+                            <option>XXXXXX</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label>ID FreshDesk</label> <br>
+                        <input class="form-control" type="text">
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label>ID Aluno</label> <br>
+                        <input class="form-control" type="text">
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label>Data</label> <br>
+                        <input class="form-control" type="date">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="diagnostico">Diagnóstico</label> <br>
+                        <textarea class="form-control" rows="2" id="diagnostico" placeholder="Problema que o aluno relatou e você identificou"></textarea>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="resposta">Resposta</label> <br>
+                        <textarea class="form-control" rows="2" id="resposta" placeholder="Sua solução ou resposta para o aluno"></textarea>
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="observacao">Observações</label> <br>
+                        <textarea class="form-control" rows="2" id="observacao" placeholder="Informações úteis sobre o atendimento"></textarea>
+                    </div>
+                </div>
+            </form>
+		</div>
+	</div>
+</body>
+</html>
