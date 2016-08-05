@@ -3,14 +3,44 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="js/script.js">
 	<link rel="stylesheet" href="css/style.css">
 	<title>HelpDesk</title>
 </head>
 <body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">HelpDesk</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Início</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Relatórios</a></li>
+                            <li><a href="#">Registros</a></li>
+                            <li><a href="#">Editor</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Banco de Dados</a></li>
+                    <li><a href="#">Estatisticas</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 	<div class="container">
 		<div class="jumbotron">
 			<div class="row">
@@ -19,7 +49,7 @@
                 <small class="text-muted">HelpDesk</small>
             </h2>
             <br>
-            <form class="form" role="form">
+            <form class="form" role="form" id="formulario">
                 <div class="form-group col-sm-2">
                     <label>Colaborador</label> <br>
                     <select class="form-control">
@@ -135,6 +165,11 @@
                         <textarea class="form-control" rows="2" id="observacao" placeholder="Informações úteis sobre o atendimento"></textarea>
                     </div>
                 </div>
+            <br>
+            <div class="btns">
+                <button type="submit" class="btn btn-success">Enviar</button>
+                <button type="reset" class="btn btn-primary">Limpar</button>
+            </div>
             </form>
 		</div>
 	</div>
