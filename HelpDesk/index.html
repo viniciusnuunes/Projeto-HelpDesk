@@ -46,16 +46,18 @@
     </nav>
 	<div class="container">
 		<div class="jumbotron">
+			<form novalidate name="formulario" class="form" id="formulario" ng-submit="submitForm()">
 			<div class="row">
             <h2>
                 Cadastro de Atendimento
                 <small class="text-muted">HelpDesk</small>
             </h2>
             <br>
-            <form novalidate  name="formulario" class="form" role="form" id="formulario" ng-submit="submitForm()">
+
                 <div class="form-group col-sm-2">
                     <label>Colaborador</label> <br>
-                    <select class="form-control">
+                    <select name="colaborador" ng-model="colaborador" class="form-control" ng-required="true">
+												<option disabled selected value> -- selecione um Colaborador -- </option>
                         <option>Adriano</option>
                         <option>Iana</option>
                         <option>Julia</option>
@@ -66,7 +68,8 @@
                 </div>
                 <div class="form-group col-sm-2">
                     <label>Entrada</label> <br>
-                    <select class="form-control">
+                    <select name="entrada" ng-model="entrada" class="form-control" ng-required="true">
+												<option disabled selected value> -- selecione uma Entrada -- </option>
                         <option>Demanda</option>
                         <option>E-Mail</option>
                         <option>Fresh Desk</option>
@@ -76,14 +79,16 @@
                 </div>
                 <div class="form-group col-sm-2">
                     <label>Origem</label> <br>
-                    <select class="form-control">
+                    <select name="origem" ng-model="origem" class="form-control" ng-required="true">
+												<option disabled selected value> -- selecione Origem -- </option>
                         <option>Aluno</option>
                         <option>MEDGRUPO</option>
                     </select>
                 </div>
                 <div class="form-group col-sm-2">
                     <label>Aplicação</label> <br>
-                    <select class="form-control">
+                    <select name="aplicacao" ng-model="aplicacao" class="form-control" ng-required="true">
+												<option disabled selected value> -- selecione uma Aplicação -- </option>
                         <option>Área Restrita</option>
                         <option>MedSoft</option>
                         <option>MedCode</option>
@@ -101,7 +106,8 @@
                 </div>
                 <div class="form-group col-sm-2">
                     <label>Device</label> <br>
-                    <select class="form-control">
+                    <select class="form-control" ng-required="true">
+												<option name="device" ng-model="device" disabled selected value> -- selecione um Device -- </option>
                         <option>iPhone</option>
                         <option>iPad</option>
                         <option>Smartphone</option>
@@ -118,8 +124,9 @@
                 </div>
                 <div class="form-group col-sm-2">
                     <label>Status</label> <br>
-                    <select class="form-control">
-                        <option>Solucionado</option>
+                    <select name="status" ng-model="status" class="form-control" ng-required="true">
+												<option disabled selected value> -- selecione um Status -- </option>
+												<option>Solucionado</option>
                         <option>Pendente</option>
                         <option>Parcial</option>
                     </select>
@@ -129,7 +136,8 @@
                 <div class="row">
                     <div class="form-group col-sm-3">
                         <label>Problema</label> <br>
-                        <select class="form-control">
+                        <select name="problema" ng-model="problema" class="form-control" ng-required="true">
+														<option disabled selected value> -- selecione um Problema -- </option>
                             <option>XXXXXX</option>
                             <option>XXXXXX</option>
                             <option>XXXXXX</option>
@@ -143,32 +151,29 @@
                     </div>
                     <div class="form-group col-sm-3">
                         <label>ID FreshDesk</label> <br>
-                        <input class="form-control" type="text">
+                        <input name="idFreshdesk" ng-model="idFreshdesk" class="form-control" type="text" ng-minlength="4" ng-maxlength="7">
                     </div>
                     <div class="form-group col-sm-3">
                         <label>ID Aluno</label> <br>
-                        <input name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true">
-												<span ng-show="formulario.idAluno.$invalid" class="form-control alert-danger">
-													Campo obrigatório!
-												</span>
+                        <input name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
                     </div>
                     <div class="form-group col-sm-3">
                         <label>Data</label> <br>
-                        <input class="form-control" type="date">
+                        <input name="data" ng-model="data" class="form-control" type="date" ng-required="true">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-sm-4">
                         <label for="diagnostico">Diagnóstico</label> <br>
-                        <textarea class="form-control" rows="2" id="diagnostico" placeholder="Problema que o aluno relatou e você identificou"></textarea>
+                        <textarea name="diagnostico" ng-model="diagnostico" class="form-control" rows="2" id="diagnostico" placeholder="Problema que o aluno relatou e você identificou" ng-required="true"></textarea>
                     </div>
                     <div class="form-group col-sm-4">
                         <label for="resposta">Resposta</label> <br>
-                        <textarea class="form-control" rows="2" id="resposta" placeholder="Sua solução ou resposta para o aluno"></textarea>
+                        <textarea name="resposta" ng-model="resposta" class="form-control" rows="2" id="resposta" placeholder="Sua solução ou resposta para o aluno" ng-required="true"></textarea>
                     </div>
                     <div class="form-group col-sm-4">
                         <label for="observacao">Observações</label> <br>
-                        <textarea class="form-control" rows="2" id="observacao" placeholder="Informações úteis sobre o atendimento"></textarea>
+                        <textarea name="observacao" ng-model="observacao" class="form-control" rows="2" id="observacao" placeholder="Informações úteis sobre o atendimento" ng-required="true"></textarea>
                     </div>
                 </div>
             <br>
