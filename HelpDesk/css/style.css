@@ -1,27 +1,27 @@
 body {
-    font-family: Arial;
+  font-family: Arial;
 }
 
 .form-group {
-    text-align: center;
+  text-align: center;
 }
 
 .jumbotron {
-    box-shadow: 1px 2px 20px 1px black;
-    background-color: antiquewhite;
+  box-shadow: 1px 2px 20px 1px black;
+  background-color: antiquewhite;
 }
 
 h2 {
-    font-family: Impact;
+  font-family: Impact;
 }
 
 .navbar {
-    margin-bottom: 0;
-    border-radius: 0;
+  margin-bottom: 0;
+  border-radius: 0;
 }
 
 .btns {
-    text-align: center;
+  text-align: center;
 }
 
 input[type=number]::-webkit-inner-spin-button,
