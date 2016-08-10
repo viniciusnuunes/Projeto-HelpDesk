@@ -1,11 +1,38 @@
-angular.module('helpdesk').controller('formController', function($scope) {
+// angular.module('helpdesk').controller('formController', function ($scope) {
+//
+//     $scope.submitForm = function () {
+//         if ($scope.formulario.$valid) {
+//             console.log('Formulario OK');
+//         }
+//         else {
+//             console.log('erro!');
+//         }
+//     };
+// });
 
-  $scope.submitForm = function(){
-    if ($scope.formulario.$valid) {
-      console.log('Formulario OK');
+//// escrita de controller segundo o padrão Jhon Papa
+
+(function () {
+    'use strict';
+
+    angular
+        .module('helpdesk')
+        .controller('formController', formController);
+
+    formController.$inject = [];
+
+    function formController() {
+
+        var vm = this;
+        vm.submitForm = submitForm;
+
+        function submitForm() {
+            if (formulario.$valid) {
+                console.log('Formulario OK');
+            }
+            else {
+                console.log('erro!');
+            }
+        }
     }
-      else {
-        console.log('erro!');
-      }
-  };
-});
+})();
