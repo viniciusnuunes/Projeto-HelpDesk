@@ -6,7 +6,8 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script src="http://code.angularjs.org/1.2.6/angular.js"></script>
+	<script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/controllers/form-controller.js"></script>
 	<link rel="stylesheet" href="js/script.js">
@@ -58,7 +59,7 @@
 						<label>Colaborador</label> <br>
 						<select name="colaborador" ng-model="colaborador" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
-							<option>Adriano</option>
+							<option value="adriano">Adriano</option>
 							<option>Iana</option>
 							<option>Julia</option>
 							<option>Pedro</option>
@@ -68,7 +69,7 @@
 					</div>
 					<div class="form-group col-sm-2">
 						<label>Entrada</label> <br>
-						<select name="entrada" ng-model="entrada" class="form-control" ng-required="true">
+						<select ng-disabled="colaborador == 'Ygor'" name="entrada" ng-model="entrada" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Demanda</option>
 							<option>E-Mail</option>
@@ -151,7 +152,7 @@
 					</div>
 					<div class="form-group col-sm-3">
 						<label>ID FreshDesk</label> <br>
-						<input type="number" name="idFreshdesk" ng-model="idFreshdesk" class="form-control" type="text" ng-minlength="4" ng-maxlength="7">
+						<input type="text" name="idFreshdesk" ng-model="idFreshdesk" class="form-control" type="text" ng-minlength="4" ng-maxlength="7" required>
 					</div>
 					<div class="form-group col-sm-3">
 						<label>ID Aluno</label> <br>
@@ -161,6 +162,12 @@
 						<label>Data</label> <br>
 						<input name="data" ng-model="data" class="form-control" type="date" ng-required="true">
 					</div>
+
+					<div ng-messages="formulario.idFreshdesk.$error" style="color:maroon" role="alert">
+					    <div ng-message="required">You did not enter a field</div>
+					    <div ng-message="minlength">Your field is too short</div>
+					    <div ng-message="maxlength">Your field is too long</div>
+					  </div>
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-4">

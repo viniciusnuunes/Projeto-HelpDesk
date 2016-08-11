@@ -1,1 +1,1 @@
-angular.module('helpdesk', []);
+angular.module('helpdesk', ['ngMessages']);
