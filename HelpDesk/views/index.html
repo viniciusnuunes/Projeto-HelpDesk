@@ -15,7 +15,7 @@
 </head>
 
 <body ng-controller="formController">
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse"> <!-- Inicio da Navbar -->
 		<div class="container-fluid">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -44,17 +44,16 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
+	</nav> <!-- Fim da Navbar -->
 	<div class="container">
 		<div class="jumbotron">
-			<form novalidate name="formulario" class="form" id="formulario" ng-submit="submitForm()">
+			<form novalidate name="formulario" class="form" id="formulario" ng-submit="submitForm()"> <!-- Inicio do Fomulário -->
 				<div class="row">
 					<h2>
 						Cadastro de Atendimento
 						<small class="text-muted">HelpDesk</small>
 					</h2>
 					<br>
-
 					<div class="form-group col-sm-2">
 						<label>Colaborador</label>
 						<br>
@@ -219,9 +218,8 @@
 					<button type="submit" class="btn btn-success" ng-disabled="!formulario.$valid">Enviar</button>
 					<button type="reset" class="btn btn-primary" ng-click="refresh()">Limpar</button>
 				</div>
-			</form>
-		</div>
-	</div>
+			</form> <!-- Fim do Fomulário -->
+		</div> <!-- Fim da Jumbotron -->
+	</div> <!-- Fim da Container -->
 </body>
-
 </html>
