@@ -1,4 +1,4 @@
-var helpdesk = angular.module('helpdesk', []).
+var helpdesk = angular.module('helpdesk', ['ngMessages']).
 controller('formController', function($scope, $http) {
 
     $scope.submitForm = function() {
