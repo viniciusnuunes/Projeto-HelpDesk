@@ -53,21 +53,32 @@
             <small class="text-muted">HelpDesk</small>
         </h2>
             <br>
-            <h3>Pesquisar</h3>
-            <form class="form-inline" role="form">
+            <P><span class="glyphicon glyphicon-search"></span> Pesquisar</p>
+            <form class="form-horizontal" role="form">
                 <div class="form-group">
-                    <label for="idAluno">ID Aluno:</label>
-                    <input type="number" id="idAluno" name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
+                    <label class="col-sm-2 control-label" for="idAluno">ID Aluno:</label>
+                    <div class="col-sm-3">
+                      <input type="number" id="idAluno" name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="dataDe">De:</label>
-                    <input name="data" id="dataDe" ng-model="dataDe" class="form-control" type="date" ng-required="true">
+                    <label class="col-sm-2 control-label" for="dataDe">De:</label>
+                    <div class="col-sm-3">
+                      <input name="data" id="dataDe" ng-model="dataDe" class="form-control" type="date" ng-required="true">
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="dataAte">Até:</label>
-                    <input name="data" id="dataAte" ng-model="dataAte" class="form-control" type="date" ng-required="true">
+                    <label class="col-sm-2 control-label" for="dataAte">Até:</label>
+                    <div class="col-sm-3">
+                      <input name="data" id="dataAte" ng-model="dataAte" class="form-control" type="date" ng-required="true">
+                    </div>
                 </div>
-                <button type="submit" id="btnsubmit" class="btn btn-success" ng-disabled="formulario.$invalid">OK</button>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="dataAte"></label>
+                    <div class="col-sm-3">
+                      <button type="submit" id="btnsubmit" class="btn btn-success" ng-disabled="formulario.$invalid">OK</button>
+                    </div>
+                </div>
             </form>
         </div>
 
