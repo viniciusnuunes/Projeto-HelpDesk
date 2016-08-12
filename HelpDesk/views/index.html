@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt=br" ng-app="helpdesk">
+<html lang="pt-br" ng-app="helpdesk">
 
 <head>
 	<meta charset="UTF-8">
@@ -13,7 +13,6 @@
 	<link rel="stylesheet" href="../public/css/style.css">
 	<title>HelpDesk</title>
 </head>
-
 <body ng-controller="formController">
 	<nav class="navbar navbar-inverse"> <!-- Inicio da Navbar -->
 		<div class="container-fluid">
@@ -47,17 +46,17 @@
 	</nav> <!-- Fim da Navbar -->
 	<div class="container">
 		<div class="jumbotron">
+			<h2>
+				Cadastro de Atendimento
+				<small class="text-muted">HelpDesk</small>
+			</h2>
+			<br>
 			<form novalidate name="formulario" class="form" id="formulario" ng-submit="submitForm()"> <!-- Inicio do Fomulário -->
-				<div class="row"> <!-- Inicio da linha -->
-					<h2>
-						Cadastro de Atendimento
-						<small class="text-muted">HelpDesk</small>
-					</h2>
-					<br>
+				<div class="row">
 					<div class="form-group col-sm-2">
-						<label>Colaborador</label>
+						<label for="colaborador">Colaborador</label>
 						<br>
-						<select name="colaborador" ng-model="cadastro.colaborador" class="form-control" ng-required="true">
+						<select name="colaborador" id="colaborador" ng-model="cadastro.colaborador" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Adriano</option>
 							<option>Iana</option>
@@ -68,9 +67,9 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Entrada</label>
+						<label for="entrada">Entrada</label>
 						<br>
-						<select name="entrada" ng-model="cadastro.entrada" class="form-control" ng-required="true">
+						<select name="entrada" id="entrada" ng-model="cadastro.entrada" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Demanda</option>
 							<option>E-Mail</option>
@@ -80,57 +79,50 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Origem</label>
+						<label for="origem">Origem</label>
 						<br>
-						<select name="origem" ng-model="cadastro.origem" class="form-control" ng-required="true">
+						<select name="origem" id="origem" ng-model="cadastro.origem" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Aluno</option>
 							<option>MEDGRUPO</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Aplicação</label>
+						<label for="aplicacao">Aplicação</label>
 						<br>
-						<select name="aplicacao" ng-model="cadastro.aplicacao" class="form-control" ng-required="true">
+						<select name="aplicacao" id="aplicacao" ng-model="cadastro.aplicacao" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
-							<option>Área Restrita</option>
-							<option>MedSoft</option>
-							<option>MedCode</option>
-							<option>MedReader</option>
-							<option>MedEletro</option>
-							<option>MedCode/MedSoft</option>
-							<option>MedReader/MedCode</option>
-							<option>MedSoft/MedReader</option>
-							<option>Restrita/MedReader</option>
-							<option>Restrita/MedCode</option>
-							<option>Restrita/MedSoft</option>
-							<option>Todos</option>
+							<option>ÁREA RESTRITA</option>
+							<option>CONCURSOS</option>
+							<option>Material impresso</option>
+							<option>MEDELETRO</option>
+							<option>MEDCODE</option>
+							<option>MEDREADER</option>
+							<option>MEDSOFT</option>
+							<option>RECURSOS (SITE)</option>
+							<option>RECURSOS (APP)</option>
 							<option>Não informado</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Device</label>
+						<label for="device">Device</label>
 						<br>
-						<select class="form-control" name="device" ng-model="cadastro.device" ng-required="true">
+						<select class="form-control" name="device" id="device" ng-model="cadastro.device" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
-							<option>iPhone</option>
-							<option>iPad</option>
-							<option>Smartphone</option>
-							<option>Tablet</option>
-							<option>Computador Windows</option>
 							<option>Computador Mac</option>
-							<option>iPad/iPhone</option>
-							<option>Smartphone/Tablet</option>
-							<option>PC/iOS</option>
-							<option>PC/Android</option>
+							<option>Computador Windows</option>
+							<option>iPad</option>
+							<option>iPhone</option>
+							<option>Smartphone Android</option>
+							<option>Tablet Android</option>
 							<option>Todos</option>
 							<option>Não informado</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Status</label>
+						<label for="status">Status</label>
 						<br>
-						<select name="status" ng-model="cadastro.status" class="form-control" ng-required="true">
+						<select name="status" id="status" ng-model="cadastro.status" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Solucionado</option>
 							<option>Pendente</option>
@@ -141,66 +133,57 @@
 				<br>
 				<div class="row"> <!-- Inicio da linha -->
 					<div class="form-group col-sm-2">
-						<label>Problema</label>
+						<label for="problema">Problema</label>
 						<br>
-						<select name="problema" ng-model="cadastro.problema" class="form-control" ng-required="true">
-							<option disabled selected value> Selecione uma opção </option>
-							<option>XXXXXX</option>
-							<option>XXXXXX</option>
-							<option>XXXXXX</option>
-							<option>XXXXXX</option>
-							<option>XXXXXX</option>
-							<option>XXXXXX</option>
-							<option>XXXXXX</option>
-							<option>XXXXXX</option>
-							<option>XXXXXX</option>
-						</select>
-					</div>
-					<div class="form-group has-error has-feedback col-sm-2">
-						<label>ID FreshDesk</label> <br>
- 						<input type="number" name="idFreshdesk" ng-model="idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7">						
- 						<div ng-messages="formulario.idFreshdesk.$error" style="color:maroon" role="alert">
- 							<div ng-message="minlength">Curto demais</div>
- 							<div ng-message="maxlength">Longo demais</div>
- 						</div>
+						<input type="text" name="problema" id="problema" ng-model="cadastro.problema" class="form-control" ng-required="true" ng-minlenght="4" ng-maxlenght="255">
 					</div>
 					<div class="form-group col-sm-2">
-						<label>ID Aluno</label> <br>
-  						<input type="number" name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
-							<div ng-messages="formulario.idAluno.$error" style="color:maroon" role="alert">
+						<label for="idFreshdesk">ID FreshDesk</label>
+						<br>
+						<input type="number" name="idFreshdesk" id="idFreshdesk" ng-model="idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7">
+						<div class="mensagem-validacao" ng-messages="formulario.idFreshdesk.$error" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
 						</div>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Recorrente?</label>
+						<label for="idAluno">ID Aluno</label>
 						<br>
-						<select name="recorrente" ng-model="cadastro.recorrente" class="form-control" ng-required="true">
+						<input type="number" name="idAluno" id="idAluno" ng-model="idAluno" class="form-control" ng-required="true" ng-minlength="4" ng-maxlength="7">
+						<div class="mensagem-validacao" ng-messages="formulario.idAluno.$error" role="alert">
+							<div ng-message="minlength">Curto demais</div>
+							<div ng-message="maxlength">Longo demais</div>
+						</div>
+					</div>
+					<div class="form-group col-sm-2">
+						<label for="recorrente">Recorrente?</label>
+						<br>
+						<select name="recorrente" id="recorrente" ng-model="cadastro.recorrente" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Sim</option>
 							<option>Não</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Abriu Demanda?</label>
+						<label for="abriuDemanda">Abriu Demanda?</label>
 						<br>
-						<select name="abriuDemanda" ng-model="cadastro.abriuDemanda" class="form-control" ng-required="true">
+						<select name="abriuDemanda" id="abriuDemanda" ng-model="cadastro.abriuDemanda" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Sim</option>
 							<option>Não</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Data</label>
+						<label for="data">Data</label>
 						<br>
-						<input name="data" ng-model="cadastro.data" class="form-control" type="date" ng-required="true">
+						<input name="data" id="data" ng-model="cadastro.data" class="form-control" type="date" ng-required="true">
 					</div>
 				</div> <!-- Fim da linha -->
 				<div class="row"> <!-- Inicio da linha -->
 					<div class="form-group col-sm-4">
 						<label for="diagnostico">Diagnóstico</label>
 						<br>
-						<textarea name="diagnostico" ng-model="cadastro.diagnostico" class="form-control" rows="2" id="diagnostico" placeholder="Problema que o aluno relatou e você identificou" ng-required="true"></textarea>
+						<textarea name="diagnostico" ng-model="cadastro.diagnostico" class="form-control" rows="2" id="diagnostico" placeholder="Razão de ter ocorrido o problema (por que esse problema ocorreu?)" ng-required="true"></textarea>
 					</div>
 					<div class="form-group col-sm-4">
 						<label for="resposta">Resposta</label>
@@ -210,7 +193,7 @@
 					<div class="form-group col-sm-4">
 						<label for="observacao">Observações</label>
 						<br>
-						<textarea name="observacao" ng-model="cadastro.observacao" class="form-control" rows="2" id="observacao" placeholder="Informações úteis sobre o atendimento"></textarea>
+						<textarea name="observacao" ng-model="cadastro.observacao" class="form-control" rows="2" id="observacao" placeholder="Informações adicionais sobre o atendimento"></textarea>
 					</div>
 				</div> <!-- Fim da linha -->
 				<br>
