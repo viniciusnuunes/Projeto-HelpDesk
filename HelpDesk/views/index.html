@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt=br" ng-app="helpdesk">
+<html lang="pt-br" ng-app="helpdesk">
 
 <head>
 	<meta charset="UTF-8">
@@ -141,7 +141,7 @@
 						<label for="idFreshdesk">ID FreshDesk</label>
 						<br>
 						<input type="number" name="idFreshdesk" id="idFreshdesk" ng-model="idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7">
-						<div ng-messages="formulario.idFreshdesk.$error" style="color:maroon" role="alert">
+						<div class="mensagem-validacao" ng-messages="formulario.idFreshdesk.$error" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
 						</div>
@@ -150,7 +150,7 @@
 						<label for="idAluno">ID Aluno</label>
 						<br>
 						<input type="number" name="idAluno" id="idAluno" ng-model="idAluno" class="form-control" ng-required="true" ng-minlength="4" ng-maxlength="7">
-						<div ng-messages="formulario.idAluno.$error" style="color:maroon" role="alert">
+						<div class="mensagem-validacao" ng-messages="formulario.idAluno.$error" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
 						</div>
