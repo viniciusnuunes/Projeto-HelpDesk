@@ -35,8 +35,7 @@ app.get('/', function(req, res){
   res.render('index', function(err, html) {
     res.send(html);
   });
-});
-});
+
 });
 app.post('/', function(req, res){
   db.cadastro.insert(req.body, function(err, doc){

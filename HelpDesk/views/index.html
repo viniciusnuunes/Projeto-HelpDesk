@@ -130,9 +130,9 @@
 							<option>Parcial</option>
 						</select>
 					</div>
-				</div>
+				</div> <!-- Fim da linha -->
 				<br>
-				<div class="row">
+				<div class="row"> <!-- Inicio da linha -->
 					<div class="form-group col-sm-2">
 						<label for="problema">Problema</label>
 						<br>
@@ -142,7 +142,7 @@
 						<label for="idFreshdesk">ID FreshDesk</label>
 						<br>
 						<input type="number" name="idFreshdesk" id="idFreshdesk" ng-model="idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7">
-						<div ng-messages="formulario.idFreshdesk.$error" style="color:maroon" role="alert">
+						<div class="mensagem-validacao" ng-messages="formulario.idFreshdesk.$error" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
 						</div>
@@ -151,7 +151,7 @@
 						<label for="idAluno">ID Aluno</label>
 						<br>
 						<input type="number" name="idAluno" id="idAluno" ng-model="idAluno" class="form-control" ng-required="true" ng-minlength="4" ng-maxlength="7">
-						<div ng-messages="formulario.idAluno.$error" style="color:maroon" role="alert">
+						<div class="mensagem-validacao" ng-messages="formulario.idAluno.$error" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
 						</div>
@@ -179,8 +179,8 @@
 						<br>
 						<input name="data" id="data" ng-model="cadastro.data" class="form-control" type="date" ng-required="true">
 					</div>
-				</div>
-				<div class="row">
+				</div> <!-- Fim da linha -->
+				<div class="row"> <!-- Inicio da linha -->
 					<div class="form-group col-sm-4">
 						<label for="diagnostico">Diagnóstico</label>
 						<br>
@@ -196,7 +196,7 @@
 						<br>
 						<textarea name="observacao" ng-model="cadastro.observacao" class="form-control" rows="2" id="observacao" placeholder="Informações adicionais sobre o atendimento"></textarea>
 					</div>
-				</div>
+				</div> <!-- Fim da linha -->
 				<br>
 				<div class="btns">
 					<button type="submit" class="btn btn-success" ng-disabled="!formulario.$valid">Enviar</button>
