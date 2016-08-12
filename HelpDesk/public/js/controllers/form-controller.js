@@ -2,25 +2,28 @@ var helpdesk = angular.module('helpdesk',[]).
                controller('formController', function ($scope, $http) {
 
      $scope.submitForm = function (){
-          /*db.cadastro.insert(req.body, function(err, doc){
-               res.json(doc);*/
-          console.log($scope.cadastro);
+          if ($scope.formulario.$valid) {
+               console.log($scope.cadastro);
+               console.log('Formulario OK');
+          }
+          else {
+              console.log('erro!');
+         }
+var refresh = function() {
+  $http.get('/').success(function(response) {
+    console.log("I got the data I requested");
+    $scope.cadastro = response;
+    $scope.submitForm = "";
+  });
+};
+refresh();
 
 };
 
 });
 
-        /*if ($scope.formulario.$valid) {
-             $http.post()
 
 
-             console.log('Formulario OK');
-         }
-         else {
-             console.log('erro!');
-         }
-     };
-});*/
 
 //// escrita de controller segundo o padrão Jhon Papa
 
