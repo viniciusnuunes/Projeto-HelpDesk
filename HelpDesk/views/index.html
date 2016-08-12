@@ -47,13 +47,13 @@
 	</nav> <!-- Fim da Navbar -->
 	<div class="container">
 		<div class="jumbotron">
+			<h2>
+				Cadastro de Atendimento
+				<small class="text-muted">HelpDesk</small>
+			</h2>
+			<br>
 			<form novalidate name="formulario" class="form" id="formulario" ng-submit="submitForm()"> <!-- Inicio do Fomulário -->
 				<div class="row">
-					<h2>
-						Cadastro de Atendimento
-						<small class="text-muted">HelpDesk</small>
-					</h2>
-					<br>
 					<div class="form-group col-sm-2">
 						<label>Colaborador</label>
 						<br>
@@ -158,16 +158,16 @@
 					</div>
 					<div class="form-group col-sm-2">
 						<label>ID FreshDesk</label> <br>
- 						<input type="number" name="idFreshdesk" ng-model="idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7">
- 						<div ng-messages="formulario.idFreshdesk.$error" style="color:maroon" role="alert">
- 							<div ng-message="minlength">Curto demais</div>
- 							<div ng-message="maxlength">Longo demais</div>
- 						</div>
+						<input type="number" name="idFreshdesk" ng-model="idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7">
+						<div ng-messages="formulario.idFreshdesk.$error" style="color:maroon" role="alert">
+							<div ng-message="minlength">Curto demais</div>
+							<div ng-message="maxlength">Longo demais</div>
+						</div>
 					</div>
 					<div class="form-group col-sm-2">
 						<label>ID Aluno</label> <br>
-  						<input type="number" name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
-							<div ng-messages="formulario.idAluno.$error" style="color:maroon" role="alert">
+						<input type="number" name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
+						<div ng-messages="formulario.idAluno.$error" style="color:maroon" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
 						</div>
