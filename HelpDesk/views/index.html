@@ -92,18 +92,15 @@
 						<br>
 						<select name="aplicacao" id="aplicacao" ng-model="cadastro.aplicacao" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
-							<option>Área Restrita</option>
-							<option>MedSoft</option>
-							<option>MedCode</option>
-							<option>MedReader</option>
-							<option>MedEletro</option>
-							<option>MedCode/MedSoft</option>
-							<option>MedReader/MedCode</option>
-							<option>MedSoft/MedReader</option>
-							<option>Restrita/MedReader</option>
-							<option>Restrita/MedCode</option>
-							<option>Restrita/MedSoft</option>
-							<option>Todos</option>
+							<option>ÁREA RESTRITA</option>
+							<option>CONCURSOS</option>
+							<option>Material impresso</option>
+							<option>MEDELETRO</option>
+							<option>MEDCODE</option>
+							<option>MEDREADER</option>
+							<option>MEDSOFT</option>
+							<option>RECURSOS (SITE)</option>
+							<option>RECURSOS (APP)</option>
 							<option>Não informado</option>
 						</select>
 					</div>
@@ -112,16 +109,12 @@
 						<br>
 						<select class="form-control" name="device" id="device" ng-model="cadastro.device" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
-							<option>iPhone</option>
-							<option>iPad</option>
-							<option>Smartphone</option>
-							<option>Tablet</option>
-							<option>Computador Windows</option>
 							<option>Computador Mac</option>
-							<option>iPad/iPhone</option>
-							<option>Smartphone/Tablet</option>
-							<option>PC/iOS</option>
-							<option>PC/Android</option>
+							<option>Computador Windows</option>
+							<option>iPad</option>
+							<option>iPhone</option>
+							<option>Smartphone Android</option>
+							<option>Tablet Android</option>
 							<option>Todos</option>
 							<option>Não informado</option>
 						</select>
@@ -190,7 +183,7 @@
 					<div class="form-group col-sm-4">
 						<label for="diagnostico">Diagnóstico</label>
 						<br>
-						<textarea name="diagnostico" ng-model="cadastro.diagnostico" class="form-control" rows="2" id="diagnostico" placeholder="Problema que o aluno relatou e você identificou" ng-required="true"></textarea>
+						<textarea name="diagnostico" ng-model="cadastro.diagnostico" class="form-control" rows="2" id="diagnostico" placeholder="Razão de ter ocorrido o problema (por que esse problema ocorreu?)" ng-required="true"></textarea>
 					</div>
 					<div class="form-group col-sm-4">
 						<label for="resposta">Resposta</label>
@@ -200,7 +193,7 @@
 					<div class="form-group col-sm-4">
 						<label for="observacao">Observações</label>
 						<br>
-						<textarea name="observacao" ng-model="cadastro.observacao" class="form-control" rows="2" id="observacao" placeholder="Informações úteis sobre o atendimento"></textarea>
+						<textarea name="observacao" ng-model="cadastro.observacao" class="form-control" rows="2" id="observacao" placeholder="Informações adicionais sobre o atendimento"></textarea>
 					</div>
 				</div>
 				<br>
