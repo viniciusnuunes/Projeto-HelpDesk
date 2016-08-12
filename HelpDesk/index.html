@@ -135,7 +135,7 @@
 				</div>
 				<br>
 				<div class="row">
-					<div class="form-group col-sm-3">
+					<div class="form-group col-sm-2">
 						<label>Problema</label> <br>
 						<select name="problema" ng-model="problema" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
@@ -150,24 +150,42 @@
 							<option>XXXXXX</option>
 						</select>
 					</div>
-					<div class="form-group col-sm-3">
+					<div class="form-group col-sm-2">
 						<label>ID FreshDesk</label> <br>
-						<input type="text" name="idFreshdesk" ng-model="idFreshdesk" class="form-control" type="text" ng-minlength="4" ng-maxlength="7" required>
+						<input type="number" name="idFreshdesk" ng-model="idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7">
+						<div ng-messages="formulario.idFreshdesk.$error" style="color:maroon" role="alert">
+							<div ng-message="minlength">Curto demais</div>
+							<div ng-message="maxlength">Longo demais</div>
+						</div>
 					</div>
-					<div class="form-group col-sm-3">
+					<div class="form-group col-sm-2">
 						<label>ID Aluno</label> <br>
 						<input type="number" name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
+						<div ng-messages="formulario.idAluno.$error" style="color:maroon" role="alert">
+							<div ng-message="minlength">Curto demais</div>
+							<div ng-message="maxlength">Longo demais</div>
+						</div>
 					</div>
-					<div class="form-group col-sm-3">
+					<div class="form-group col-sm-2">
+						<label>Recorrente?</label> <br>
+						<select name="recorrente" ng-model="recorrente" class="form-control" ng-required="true">
+							<option disabled selected value> Selecione uma opção </option>
+							<option>Sim</option>
+							<option>Não</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-2">
+						<label>Abriu Demanda?</label> <br>
+						<select name="abriuDemanda" ng-model="abriuDemanda" class="form-control" ng-required="true">
+							<option disabled selected value> Selecione uma opção </option>
+							<option>Sim</option>
+							<option>Não</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-2">
 						<label>Data</label> <br>
 						<input name="data" ng-model="data" class="form-control" type="date" ng-required="true">
 					</div>
-
-					<div ng-messages="formulario.idFreshdesk.$error" style="color:maroon" role="alert">
-					    <div ng-message="required">You did not enter a field</div>
-					    <div ng-message="minlength">Your field is too short</div>
-					    <div ng-message="maxlength">Your field is too long</div>
-					  </div>
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-4">
