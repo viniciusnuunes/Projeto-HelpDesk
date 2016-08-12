@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt=br" ng-app="helpdesk">
+<html lang="pt-br" ng-app="helpdesk">
 
 <head>
 	<meta charset="UTF-8">
@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="../public/css/style.css">
 	<title>HelpDesk</title>
 </head>
+
 <body ng-controller="formController">
 	<nav class="navbar navbar-inverse"> <!-- Inicio da Navbar -->
 		<div class="container-fluid">
@@ -57,7 +58,7 @@
 						<label for="colaborador">Colaborador</label>
 						<br>
 						<select name="colaborador" id="colaborador" ng-model="cadastro.colaborador" class="form-control" ng-required="true">
-							<option disabled selected value> Selecione uma opção </option>
+							<option disabled selected value>Selecione uma opção</option>
 							<option>Adriano</option>
 							<option>Iana</option>
 							<option>Julia</option>
@@ -82,7 +83,7 @@
 						<label for="origem">Origem</label>
 						<br>
 						<select name="origem" id="origem" ng-model="cadastro.origem" class="form-control" ng-required="true">
-							<option disabled selected value> Selecione uma opção </option>
+							<option disabled selected value>Selecione uma opção</option>
 							<option>Aluno</option>
 							<option>MEDGRUPO</option>
 						</select>
@@ -91,7 +92,7 @@
 						<label for="aplicacao">Aplicação</label>
 						<br>
 						<select name="aplicacao" id="aplicacao" ng-model="cadastro.aplicacao" class="form-control" ng-required="true">
-							<option disabled selected value> Selecione uma opção </option>
+							<option disabled selected value>Selecione uma opção</option>
 							<option>ÁREA RESTRITA</option>
 							<option>CONCURSOS</option>
 							<option>Material impresso</option>
@@ -108,7 +109,7 @@
 						<label for="device">Device</label>
 						<br>
 						<select class="form-control" name="device" id="device" ng-model="cadastro.device" ng-required="true">
-							<option disabled selected value> Selecione uma opção </option>
+							<option disabled selected value>Selecione uma opção</option>
 							<option>Computador Mac</option>
 							<option>Computador Windows</option>
 							<option>iPad</option>
@@ -123,7 +124,7 @@
 						<label for="status">Status</label>
 						<br>
 						<select name="status" id="status" ng-model="cadastro.status" class="form-control" ng-required="true">
-							<option disabled selected value> Selecione uma opção </option>
+							<option disabled selected value>Selecione uma opção</option>
 							<option>Solucionado</option>
 							<option>Pendente</option>
 							<option>Parcial</option>
@@ -159,7 +160,7 @@
 						<label for="recorrente">Recorrente?</label>
 						<br>
 						<select name="recorrente" id="recorrente" ng-model="cadastro.recorrente" class="form-control" ng-required="true">
-							<option disabled selected value> Selecione uma opção </option>
+							<option disabled selected value>Selecione uma opção</option>
 							<option>Sim</option>
 							<option>Não</option>
 						</select>
@@ -168,7 +169,7 @@
 						<label for="abriuDemanda">Abriu Demanda?</label>
 						<br>
 						<select name="abriuDemanda" id="abriuDemanda" ng-model="cadastro.abriuDemanda" class="form-control" ng-required="true">
-							<option disabled selected value> Selecione uma opção </option>
+							<option disabled selected value>Selecione uma opção</option>
 							<option>Sim</option>
 							<option>Não</option>
 						</select>
