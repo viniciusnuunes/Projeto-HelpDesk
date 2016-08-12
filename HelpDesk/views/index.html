@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="pt=br">
+<html lang="pt=br" ng-app="helpdesk">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,7 +12,8 @@
 	<link rel="stylesheet" href="../public/css/style.css">
 	<title>HelpDesk</title>
 </head>
-<body ng-app="helpdesk" ng-controller="formController">
+
+<body ng-controller="formController">
 	<nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -53,7 +55,8 @@
 					<br>
 
 					<div class="form-group col-sm-2">
-						<label>Colaborador</label> <br>
+						<label>Colaborador</label>
+						<br>
 						<select name="colaborador" ng-model="cadastro.colaborador" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Adriano</option>
@@ -65,7 +68,8 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Entrada</label> <br>
+						<label>Entrada</label>
+						<br>
 						<select name="entrada" ng-model="cadastro.entrada" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Demanda</option>
@@ -76,7 +80,8 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Origem</label> <br>
+						<label>Origem</label>
+						<br>
 						<select name="origem" ng-model="cadastro.origem" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Aluno</option>
@@ -84,7 +89,8 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Aplicação</label> <br>
+						<label>Aplicação</label>
+						<br>
 						<select name="aplicacao" ng-model="cadastro.aplicacao" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Área Restrita</option>
@@ -103,7 +109,8 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Device</label> <br>
+						<label>Device</label>
+						<br>
 						<select class="form-control" name="device" ng-model="cadastro.device" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>iPhone</option>
@@ -121,7 +128,8 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label>Status</label> <br>
+						<label>Status</label>
+						<br>
 						<select name="status" ng-model="cadastro.status" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>Solucionado</option>
@@ -133,7 +141,8 @@
 				<br>
 				<div class="row">
 					<div class="form-group col-sm-3">
-						<label>Problema</label> <br>
+						<label>Problema</label>
+						<br>
 						<select name="problema" ng-model="cadastro.problema" class="form-control" ng-required="true">
 							<option disabled selected value> Selecione uma opção </option>
 							<option>XXXXXX</option>
@@ -148,29 +157,35 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-3">
-						<label>ID FreshDesk</label> <br>
+						<label>ID FreshDesk</label>
+						<br>
 						<input type="number" name="idFreshdesk" ng-model="cadastro.idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7">
 					</div>
 					<div class="form-group col-sm-3">
-						<label>ID Aluno</label> <br>
+						<label>ID Aluno</label>
+						<br>
 						<input type="number" name="idAluno" ng-model="cadastro.idAluno" class="form-control" ng-required="true" ng-minlength="4" ng-maxlength="7">
 					</div>
 					<div class="form-group col-sm-3">
-						<label>Data</label> <br>
+						<label>Data</label>
+						<br>
 						<input name="data" ng-model="cadastro.data" class="form-control" type="date" ng-required="true">
 					</div>
 				</div>
 				<div class="row">
 					<div class="form-group col-sm-4">
-						<label for="diagnostico">Diagnóstico</label> <br>
+						<label for="diagnostico">Diagnóstico</label>
+						<br>
 						<textarea name="diagnostico" ng-model="cadastro.diagnostico" class="form-control" rows="2" id="diagnostico" placeholder="Problema que o aluno relatou e você identificou" ng-required="true"></textarea>
 					</div>
 					<div class="form-group col-sm-4">
-						<label for="resposta">Resposta</label> <br>
+						<label for="resposta">Resposta</label>
+						<br>
 						<textarea name="resposta" ng-model="cadastro.resposta" class="form-control" rows="2" id="resposta" placeholder="Sua solução ou resposta para o aluno" ng-required="true"></textarea>
 					</div>
 					<div class="form-group col-sm-4">
-						<label for="observacao">Observações</label> <br>
+						<label for="observacao">Observações</label>
+						<br>
 						<textarea name="observacao" ng-model="cadastro.observacao" class="form-control" rows="2" id="observacao" placeholder="Informações úteis sobre o atendimento"></textarea>
 					</div>
 				</div>
@@ -183,4 +198,5 @@
 		</div>
 	</div>
 </body>
+
 </html>

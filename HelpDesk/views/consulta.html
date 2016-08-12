@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt=br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,294 +10,295 @@
     <script src="https://code.angularjs.org/1.5.8/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.min.js"></script>
     <script src="../public/js/controllers/form-controller.js"></script>
-  	<link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="../public/css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
     <title>HelpDesk</title>
 </head>
+
 <body ng-app="helpdesk" ng-controller="formController">
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">HelpDesk</a>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">HelpDesk</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Início</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Relatórios</a></li>
+                            <li><a href="#">Registros</a></li>
+                            <li><a href="#">Editor</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Banco de Dados</a></li>
+                    <li><a href="#">Estatisticas</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sair</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Início</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Relatórios</a></li>
-                        <li><a href="#">Registros</a></li>
-                        <li><a href="#">Editor</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Banco de Dados</a></li>
-                <li><a href="#">Estatisticas</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Sair</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-<div class="container">
-    <div class="jumbotron">
-        <h2>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <h2>
             Relatórios
             <small class="text-muted">HelpDesk</small>
         </h2>
-        <br>
-        <h3>Pesquisar</h3>
-        <form class="form-inline" role="form">
-            <div class="form-group">
-                <label for="idAluno">ID Aluno:</label>
-                <input type="number" id="idAluno" name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
-            </div>
-            <div class="form-group">
-                <label for="dataDe">De:</label>
-                <input name="data" id="dataDe" ng-model="dataDe" class="form-control" type="date" ng-required="true">
-            </div>
-            <div class="form-group">
-                <label for="dataAte">Até:</label>
-                <input name="data" id="dataAte" ng-model="dataAte" class="form-control" type="date" ng-required="true">
-            </div>
-            <button type="submit" id="btnsubmit" class="btn btn-success" ng-disabled="formulario.$invalid">OK</button>
-        </form>
-    </div>
+            <br>
+            <h3>Pesquisar</h3>
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <label for="idAluno">ID Aluno:</label>
+                    <input type="number" id="idAluno" name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
+                </div>
+                <div class="form-group">
+                    <label for="dataDe">De:</label>
+                    <input name="data" id="dataDe" ng-model="dataDe" class="form-control" type="date" ng-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="dataAte">Até:</label>
+                    <input name="data" id="dataAte" ng-model="dataAte" class="form-control" type="date" ng-required="true">
+                </div>
+                <button type="submit" id="btnsubmit" class="btn btn-success" ng-disabled="formulario.$invalid">OK</button>
+            </form>
+        </div>
 
-</div>
-<div class="table-responsive">
-    <table class="table table-bordered">
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Colaborador
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Adriano</a></li>
-                        <li><a href="#">Iana</a></li>
-                        <li><a href="#">Julia</a></li>
-                        <li><a href="#">Pedro</a></li>
-                        <li><a href="#">Vinicius</a></li>
-                        <li><a href="#">Ygor</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Entrada
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Demanda</a></li>
-                        <li><a href="#">E-mail</a></li>
-                        <li><a href="#">Fresh Desk</a></li>
-                        <li><a href="#">Spark</a></li>
-                        <li><a href="#">Telefone</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Origem
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Aluno</a></li>
-                        <li><a href="#">MEDGRUPO</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Aplicação
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Área Restrita</a></li>
-                        <li><a href="#">MedSoft</a></li>
-                        <li><a href="#">MedCode</a></li>
-                        <li><a href="#">MedReader</a></li>
-                        <li><a href="#">MedEletro</a></li>
-                        <li><a href="#">Todos</a></li>
-                        <li><a href="#">Não Informado</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Device
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">iPhone</a></li>
-                        <li><a href="#">iPad</a></li>
-                        <li><a href="#">Smartphone</a></li>
-                        <li><a href="#">Tablet</a></li>
-                        <li><a href="#">Computador Windows</a></li>
-                        <li><a href="#">Computador Mac</a></li>
-                        <li><a href="#">Todos</a></li>
-                        <li><a href="#">Não Informado</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Status
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Solucionado</a></li>
-                        <li><a href="#">Pendente</a></li>
-                        <li><a href="#">Parcial</a></li>
-                        <li><a href="#">Tablet</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Problemas
-                    <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                    <li><a href="#">XXXXXXXXXXX</a></li>
-                    <li><a href="#">XXXXXXXXXXX</a></li>
-                    <li><a href="#">XXXXXXXXXXX</a></li>
-                    <li><a href="#">XXXXXXXXXXX</a></li>
-                    <li><a href="#">XXXXXXXXXXX</a></li>
-                    <li><a href="#">XXXXXXXXXXX</a></li>
-                    <li><a href="#">XXXXXXXXXXX</a></li>
-                    <li><a href="#">XXXXXXXXXXX</a></li>
-                </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">ID FreshDesk
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">150500</a></li>
-                        <li><a href="#">185642</a></li>
-                        <li><a href="#">204458</a></li>
-                        <li><a href="#">189665</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">ID Aluno
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">150500</a></li>
-                        <li><a href="#">185642</a></li>
-                        <li><a href="#">204458</a></li>
-                        <li><a href="#">189665</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Data
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">20/05/1985</a></li>
-                        <li><a href="#">05/12/2000</a></li>
-                        <li><a href="#">05/12/2000</a></li>
-                        <li><a href="#">05/12/2000</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Diagnóstico
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Resposta
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                    </ul>
-                </div>
-            </th>
-            <th>
-                <div class="dropdown">
-                    <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Observações
-                        <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                        <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
-                    </ul>
-                </div>
-            </th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<table
-</body>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Colaborador
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Adriano</a></li>
+                                <li><a href="#">Iana</a></li>
+                                <li><a href="#">Julia</a></li>
+                                <li><a href="#">Pedro</a></li>
+                                <li><a href="#">Vinicius</a></li>
+                                <li><a href="#">Ygor</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Entrada
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Demanda</a></li>
+                                <li><a href="#">E-mail</a></li>
+                                <li><a href="#">Fresh Desk</a></li>
+                                <li><a href="#">Spark</a></li>
+                                <li><a href="#">Telefone</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Origem
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Aluno</a></li>
+                                <li><a href="#">MEDGRUPO</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Aplicação
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Área Restrita</a></li>
+                                <li><a href="#">MedSoft</a></li>
+                                <li><a href="#">MedCode</a></li>
+                                <li><a href="#">MedReader</a></li>
+                                <li><a href="#">MedEletro</a></li>
+                                <li><a href="#">Todos</a></li>
+                                <li><a href="#">Não Informado</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Device
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">iPhone</a></li>
+                                <li><a href="#">iPad</a></li>
+                                <li><a href="#">Smartphone</a></li>
+                                <li><a href="#">Tablet</a></li>
+                                <li><a href="#">Computador Windows</a></li>
+                                <li><a href="#">Computador Mac</a></li>
+                                <li><a href="#">Todos</a></li>
+                                <li><a href="#">Não Informado</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Status
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Solucionado</a></li>
+                                <li><a href="#">Pendente</a></li>
+                                <li><a href="#">Parcial</a></li>
+                                <li><a href="#">Tablet</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Problemas
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">XXXXXXXXXXX</a></li>
+                                <li><a href="#">XXXXXXXXXXX</a></li>
+                                <li><a href="#">XXXXXXXXXXX</a></li>
+                                <li><a href="#">XXXXXXXXXXX</a></li>
+                                <li><a href="#">XXXXXXXXXXX</a></li>
+                                <li><a href="#">XXXXXXXXXXX</a></li>
+                                <li><a href="#">XXXXXXXXXXX</a></li>
+                                <li><a href="#">XXXXXXXXXXX</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">ID FreshDesk
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">150500</a></li>
+                                <li><a href="#">185642</a></li>
+                                <li><a href="#">204458</a></li>
+                                <li><a href="#">189665</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">ID Aluno
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">150500</a></li>
+                                <li><a href="#">185642</a></li>
+                                <li><a href="#">204458</a></li>
+                                <li><a href="#">189665</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Data
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">20/05/1985</a></li>
+                                <li><a href="#">05/12/2000</a></li>
+                                <li><a href="#">05/12/2000</a></li>
+                                <li><a href="#">05/12/2000</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Diagnóstico
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Resposta
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                    <th>
+                        <div class="dropdown">
+                            <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Observações
+                                <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                                <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            </ul>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                    <td>Exemplo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <table </body>
+
 </html>
