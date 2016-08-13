@@ -13,7 +13,7 @@
     <script src="../public/js/controllers/form-controller.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.min.js"></script>
     <link rel="stylesheet" href="../public/css/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700" rel="stylesheet" type="text/css">
     <title>HelpDesk</title>
 </head>
 
@@ -51,37 +51,42 @@
     <div class="container">
         <div class="jumbotron">
             <h2>
-            Relatórios
-            <small class="text-muted">HelpDesk</small>
-        </h2>
+                Relatórios
+                <small class="text-muted">HelpDesk</small>
+            </h2>
             <br>
-            <P><span class="glyphicon glyphicon-search"></span> Pesquisar</p>
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="idAluno">ID Aluno:</label>
-                    <div class="col-sm-3">
-                      <input type="number" id="idAluno" name="idAluno" ng-model="idAluno" class="form-control" type="text" ng-required="true" ng-minlength="4" ng-maxlength="7">
+            <div id="container-consulta">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <p class="col-sm-2 control-label"><span class="glyphicon glyphicon-search"></span> Pesquisar</p>
+                        <div class="col-sm-4">&nbsp;</div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="dataDe">De:</label>
-                    <div class="col-sm-3">
-                      <input name="data" id="dataDe" ng-model="dataDe" class="form-control" type="date" ng-required="true">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="idAluno">ID Aluno:</label>
+                        <div class="col-sm-4">
+                          <input type="number" id="idAluno" name="idAluno" ng-model="idAluno" class="form-control" ng-minlength="4" ng-maxlength="7">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="dataAte">Até:</label>
-                    <div class="col-sm-3">
-                      <input name="data" id="dataAte" ng-model="dataAte" class="form-control" type="date" ng-required="true">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="dataDe">De:</label>
+                        <div class="col-sm-4">
+                          <input name="data" id="dataDe" ng-model="dataDe" class="form-control" type="date">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label" for="dataAte"></label>
-                    <div class="col-sm-3">
-                      <button type="submit" id="btnsubmit" class="btn btn-success" ng-disabled="formulario.$invalid">OK</button>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="dataAte">Até:</label>
+                        <div class="col-sm-4">
+                          <input name="data" id="dataAte" ng-model="dataAte" class="form-control" type="date">
+                        </div>
                     </div>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="btnSubmit-consulta"></label>
+                        <div class="col-sm-4">
+                          <button type="submit" id="btnSubmit-consulta" class="btn btn-success" ng-disabled="formulario.$invalid">OK</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
 
     </div>
@@ -312,6 +317,6 @@
             </tbody>
         </table>
     </div>
-    <table </body>
+</body>
 
 </html>
