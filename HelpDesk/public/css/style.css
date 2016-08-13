@@ -41,8 +41,9 @@ input[type=number] {
 -moz-appearance: textfield;
 }
 /* botão OK da tela de consulta, espaçamento para o lado esquerdo */
-#btnsubmit {
-  margin-left: 10px;
+#btnSubmit-consulta {
+  /*margin-left: 10px;*/
+  width: 100%;
 }
 .table-responsive, th {
   text-align: center;
