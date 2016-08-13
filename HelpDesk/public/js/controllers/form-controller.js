@@ -13,14 +13,16 @@ $scope.formulario = {};
             console.log('erro!');
         }
     };
-//    $scope.refresh = function() {
+    $scope.refresh = function() {
 //        $http.get('/').success(function(response) {
 //            console.log("Efetuada limpeza de campos");
 //            $scope.cadastro = response;
 //            $scope.submitForm = "";
 //            $scope.formulario.$setPristine();
 //        });
-//    };
+        $scope.cadastro = {};
+        $scope.formulario.$setPristine();
+    };
 });
 
 
