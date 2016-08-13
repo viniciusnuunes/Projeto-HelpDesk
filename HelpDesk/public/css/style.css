@@ -45,6 +45,9 @@ input[type=number] {
   /*margin-left: 10px;*/
   width: 100%;
 }
+#container-consulta {
+  margin: 0 auto 0 auto;
+}
 .table-responsive, th {
   text-align: center;
 }
