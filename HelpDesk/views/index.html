@@ -69,6 +69,20 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
+						<label for="data">Data</label>
+						<br>
+						<input name="data" id="data" ng-model="cadastro.data" class="form-control" type="date" ng-required="true">
+					</div>
+					<div class="form-group col-sm-2">
+						<label for="idAluno">ID Aluno</label>
+						<br>
+						<input type="number" name="idAluno" id="idAluno" ng-model="cadastro.idAluno" class="form-control" ng-required="true" ng-minlength="4" ng-maxlength="7">
+						<div class="mensagem-validacao" ng-messages="formulario.idAluno.$error" role="alert">
+							<div ng-message="minlength">Curto demais</div>
+							<div ng-message="maxlength">Longo demais</div>
+						</div>
+					</div>
+					<div class="form-group col-sm-2">
 						<label for="entrada">Entrada</label>
 						<br>
 						<select name="entrada" id="entrada" ng-model="cadastro.entrada" class="form-control" ng-required="true">
@@ -81,13 +95,13 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label for="origem">Origem</label>
+						<label for="idFreshdesk">ID FreshDesk</label>
 						<br>
-						<select name="origem" id="origem" ng-model="cadastro.origem" class="form-control" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
-							<option>Aluno</option>
-							<option>MEDGRUPO</option>
-						</select>
+						<input type="number" name="idFreshdesk" id="idFreshdesk" ng-model="cadastro.idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7"  ng-disabled="cadastro.entrada != 'Fresh Desk'">
+						<div class="mensagem-validacao" ng-messages="formulario.idFreshdesk.$error" role="alert">
+							<div ng-message="minlength">Curto demais</div>
+							<div ng-message="maxlength">Longo demais</div>
+						</div>
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="aplicacao">Aplicação</label>
@@ -106,6 +120,9 @@
 							<option>Não informado</option>
 						</select>
 					</div>
+				</div> <!-- Fim da linha -->
+				<br>
+				<div class="row"> <!-- Inicio da linha -->
 					<div class="form-group col-sm-2">
 						<label for="device">Device</label>
 						<br>
@@ -122,40 +139,9 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label for="status">Status</label>
-						<br>
-						<select name="status" id="status" ng-model="cadastro.status" class="form-control" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
-							<option>Solucionado</option>
-							<option>Pendente</option>
-							<option>Parcial</option>
-						</select>
-					</div>
-				</div> <!-- Fim da linha -->
-				<br>
-				<div class="row"> <!-- Inicio da linha -->
-					<div class="form-group col-sm-2">
 						<label for="problema">Problema</label>
 						<br>
 						<input type="text" name="problema" id="problema" ng-model="cadastro.problema" class="form-control" ng-required="true" ng-minlenght="4" ng-maxlenght="255">
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="idFreshdesk">ID FreshDesk</label>
-						<br>
-						<input type="number" name="idFreshdesk" id="idFreshdesk" ng-model="cadastro.idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7"  ng-disabled="cadastro.entrada != 'Fresh Desk'">
-						<div class="mensagem-validacao" ng-messages="formulario.idFreshdesk.$error" role="alert">
-							<div ng-message="minlength">Curto demais</div>
-							<div ng-message="maxlength">Longo demais</div>
-						</div>
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="idAluno">ID Aluno</label>
-						<br>
-						<input type="number" name="idAluno" id="idAluno" ng-model="cadastro.idAluno" class="form-control" ng-required="true" ng-minlength="4" ng-maxlength="7">
-						<div class="mensagem-validacao" ng-messages="formulario.idAluno.$error" role="alert">
-							<div ng-message="minlength">Curto demais</div>
-							<div ng-message="maxlength">Longo demais</div>
-						</div>
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="recorrente">Recorrente?</label>
@@ -164,6 +150,15 @@
 							<option disabled selected value>Selecione uma opção</option>
 							<option>Sim</option>
 							<option>Não</option>
+						</select>
+					</div>
+					<div class="form-group col-sm-2">
+						<label for="origem">Origem</label>
+						<br>
+						<select name="origem" id="origem" ng-model="cadastro.origem" class="form-control" ng-required="true">
+							<option disabled selected value>Selecione uma opção</option>
+							<option>Aluno</option>
+							<option>MEDGRUPO</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
@@ -176,9 +171,14 @@
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
-						<label for="data">Data</label>
+						<label for="status">Status</label>
 						<br>
-						<input name="data" id="data" ng-model="cadastro.data" class="form-control" type="date" ng-required="true">
+						<select name="status" id="status" ng-model="cadastro.status" class="form-control" ng-required="true">
+							<option disabled selected value>Selecione uma opção</option>
+							<option>Solucionado</option>
+							<option>Pendente</option>
+							<option>Parcial</option>
+						</select>
 					</div>
 				</div> <!-- Fim da linha -->
 				<div class="row"> <!-- Inicio da linha -->
