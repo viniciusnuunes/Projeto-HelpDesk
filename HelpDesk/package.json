@@ -1,0 +1,38 @@
+{
+  "name": "helpdesk",
+  "version": "1.0.0",
+  "description": "arquivo de lotes contendo os pacotes necessarios",
+  "main": "server.js",
+  "scripts": {
+    "test": "start",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viniciusnuunes/Projeto-Helpdesk.git"
+  },
+  "keywords": [
+    "git",
+    "pacote",
+    "instalacao"
+  ],
+  "author": "Pedro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viniciusnuunes/Projeto-Helpdesk/issues"
+  },
+  "homepage": "https://github.com/viniciusnuunes/Projeto-Helpdesk#readme",
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "consolidate": "^0.14.1",
+    "express": "^4.14.0",
+    "gridfs-stream": "^1.1.1",
+    "mongodb": "^2.2.6",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.5.9",
+    "multer": "^1.2.0",
+    "nunjucks": "^2.4.2",
+    "wiredep": "^4.0.0"
+  }
+}
