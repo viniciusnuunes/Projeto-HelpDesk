@@ -10,7 +10,7 @@ db = mongojs('teste', ['cadastro']),
 mongoose = require('mongoose'),
 fs = require('fs');
 
-fs.readdirSync(__dirname + '/models'). forEach(function(filename){
+  fs.readdirSync(__dirname + '/models'). forEach(function(filename){
   if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename
 );
 });
@@ -31,11 +31,18 @@ mongoose.connect('mongodb://localhost:27017/Helpdata', function(err, db) {
   console.log("Successfully connected to MongoDB.");
 });
 app.get('/', function(req, res){
-  console.log('I received a GET request');
+  console.log('Página Recarregada');
   res.render('index', function(err, html) {
     res.send(html);
   });
 
+
+});
+app.get('/consulta.html', function(req, res){
+  console.log('Página Recarregada');
+  res.render('consulta', function(err, html) {
+    res.send(html);
+  });
 });
 app.post('/', function(req, res){
   db.cadastro.insert(req.body, function(err, doc){
@@ -59,7 +66,7 @@ app.use(function(req, res){
   res.sendStatus(404);
 });
 //se funcionar
-var server = app.listen(3000, function() {
+  var server = app.listen(3000, function() {
   var port = server.address().port;
   console.log('Express server listening on port %s.', port);
 });
