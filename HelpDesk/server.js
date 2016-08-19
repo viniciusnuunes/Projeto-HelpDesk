@@ -25,7 +25,7 @@ app.set('HelpDesk', __dirname + '/views');
 
 
 // Conexão com o banco de dados
-mongoose.connect('mongodb://localhost:27017/Helpdata', function(err, db) {
+mongoose.connect('mongodb://localhost:27017/bancoVinicius', function(err, db) {
   assert.equal(null, err);
 
   console.log("Successfully connected to MongoDB.");

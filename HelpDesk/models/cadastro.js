@@ -3,18 +3,22 @@ Schema = mongoose.Schema;
 
 var cadastroSchema = new Schema({
   colaborador: String,
+  data: Date,
+  idAluno: Number,
   entrada: String,
-  origem: String,
+  idFreshdesk: Number,
   aplicacao: String,
   device: String,
-  status: String,
   problema: String,
-  idFreshdesk: Number,
-  idAluno: Number,
-  data: Number,
+  recorrente: Boolean,
+  origem: String,
+  abriuDemanda: Boolean,
+  status: String,
   diagnostico: String,
   resposta: String,
   observacao: String,
 });
 
 mongoose.model('cadastro', cadastroSchema);
+
+var salvarDados = mongoose.model('cadastro', cadastroSchema);

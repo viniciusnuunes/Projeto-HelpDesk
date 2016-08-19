@@ -4,7 +4,7 @@ var helpdesk = angular.module('helpdesk')
 $scope.formulario = {};
 
     $scope.submitForm = function() {
-        if ($scope.formulario.$valid) {
+        if ($scope.formulario.$valid) {            
             console.log($scope.cadastro);
             console.log('Formulario OK');
             $scope.cadastro = {};
