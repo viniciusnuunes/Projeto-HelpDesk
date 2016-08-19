@@ -1,4 +1,8 @@
-var helpdesk = angular.module('helpdesk')
+// Versão anterior do código. Para utilizá-la, remover
+// o "as vm" da declaração do controller e o "vm."
+// antes de todas as chamadas de função na index.html
+
+/*var helpdesk = angular.module('helpdesk')
 .controller('formController', function($scope, $http) {
 
 $scope.formulario = {};
@@ -19,12 +23,12 @@ $scope.limpaCampos = function() {
         }
     };
 });
+*/
 
 
-/*
-IMPLEMENTAR PADRÃO JOHN PAPA - Estudar como fazer o envio
- dos dados no formato JSON neste padrão!
-    - Ygor
+//IMPLEMENTAR PADRÃO JOHN PAPA - Estudar como fazer o envio
+// dos dados no formato JSON neste padrão!   - Ygor
+//
 
 (function () {
 'use strict';
@@ -35,18 +39,24 @@ angular
 
 formController.$inject = [];
 
-function formController($scope, $http) {
+function formController() {
 
-/* jshint validthis: true
+/* jshint validthis: true*/
 var vm = this;
+
 vm.submitForm = submitForm;
+vm.limpaCampos = limpaCampos;
+
+function limpaCampos() {
+  this.cadastro = {};
+  this.formulario.$setPristine();
+}
 
 function submitForm() {
   if (!formulario.$valid) {
       console.log(this.cadastro);
       console.log('Formulario OK');
-      this.cadastro = {};
-      this.formulario.$setPristine();
+      limpaCampos();
   } else {
       console.log('erro!');
   }
@@ -54,4 +64,3 @@ function submitForm() {
 }
 }
 })();
-*/
