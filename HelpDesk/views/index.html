@@ -97,7 +97,7 @@
 					<div class="form-group col-sm-2">
 						<label for="idFreshdesk">ID FreshDesk</label>
 						<br>
-						<input type="number" name="idFreshdesk" id="idFreshdesk" ng-model="vm.cadastro.idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7"  ng-disabled="cadastro.entrada != 'Fresh Desk'" ng-required="cadastro.entrada == 'Fresh Desk'">
+						<input type="number" name="idFreshdesk" id="idFreshdesk" ng-model="vm.cadastro.idFreshdesk" class="form-control" ng-minlength="4" ng-maxlength="7"  ng-disabled="vm.cadastro.entrada != 'Fresh Desk'" ng-required="vm.cadastro.entrada == 'Fresh Desk'">
 						<div class="mensagem-validacao" ng-messages="formulario.idFreshdesk.$error" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
