@@ -141,7 +141,7 @@
 					<div class="form-group col-sm-2">
 						<label for="problema">Problema</label>
 						<br>
-						<input type="text" name="problema" id="problema" ng-model="vm.cadastro.problema" class="form-control" ng-required="true" ng-minlenght="4" ng-maxlenght="255">
+						<input class="form-control" ng-class="myVar" type="text" name="problema" id="problema" ng-model="vm.cadastro.problema" ng-blur="!formulario.problema.$valid ? myVar='alteraFocoErro' : myVar=''" ng-required="true" ng-minlenght="4" ng-maxlenght="255">
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="recorrente">Recorrente?</label>

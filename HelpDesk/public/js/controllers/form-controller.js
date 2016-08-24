@@ -28,7 +28,7 @@ function submitForm() {
   } else {
       console.log('erro!');
   }
-
 }
+
 }
 })();
