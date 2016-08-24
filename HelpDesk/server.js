@@ -44,7 +44,7 @@ app.get('/consulta.html', function(req, res){
     res.send(html);
   });
 });
-app.post('/', function(req, res){
+app.post('/cadastro', function(req, res){
   db.cadastro.insert(req.body, function(err, doc){
     res.json(doc);
   });

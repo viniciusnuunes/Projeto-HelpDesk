@@ -110,14 +110,16 @@
 							<option disabled selected value>Selecione uma opção</option>
 							<option>ÁREA RESTRITA</option>
 							<option>CONCURSOS</option>
-							<option>Material impresso</option>
+							<option>Institucional</option>
+							<option>Material Impresso</option>
 							<option>MEDELETRO</option>
 							<option>MEDCODE</option>
 							<option>MEDREADER</option>
 							<option>MEDSOFT</option>
 							<option>RECURSOS (SITE)</option>
 							<option>RECURSOS (APP)</option>
-							<option>Não informado</option>
+							<option>Não informada</option>
+							<option>Outra</option>
 						</select>
 					</div>
 				</div> <!-- Fim da linha -->
@@ -126,16 +128,52 @@
 					<div class="form-group col-sm-2">
 						<label for="device">Device</label>
 						<br>
-						<select class="form-control" name="device" id="device" ng-model="vm.cadastro.device" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
+						<select class="form-control" name="device" id="device" ng-if="!formulario.aplicacao.$valid" ng-model="vm.cadastro.device">
+							<option disabled selected value>Selecione a aplicação</option>
+						</select>
+						<select class="form-control" name="device" id="device" ng-if="vm.cadastro.aplicacao == 'ÁREA RESTRITA' || vm.cadastro.aplicacao == 'CONCURSOS' || vm.cadastro.aplicacao == 'RECURSOS (SITE)' || vm.cadastro.aplicacao == 'Institucional'" ng-model="vm.cadastro.device">
+							<option disabled selected value>Selecione a aplicação</option>
 							<option>Computador Mac</option>
 							<option>Computador Windows</option>
 							<option>iPad</option>
 							<option>iPhone</option>
 							<option>Smartphone Android</option>
 							<option>Tablet Android</option>
-							<option>Todos</option>
 							<option>Não informado</option>
+							<option>Outro</option>
+						</select>
+						<select class="form-control" name="device" id="device" ng-if="vm.cadastro.aplicacao == 'Material Impresso'" ng-model="vm.cadastro.device">
+							<option selected>Nenhum</option>
+						</select>
+						<select class="form-control" name="device" id="device" ng-if="vm.cadastro.aplicacao == 'MEDELETRO' || vm.cadastro.aplicacao == 'MEDCODE' || vm.cadastro.aplicacao == 'RECURSOS (APP)'" ng-model="vm.cadastro.device">
+							<option disabled selected value>Selecione a aplicação</option>
+							<option>iPad</option>
+							<option>iPhone</option>
+							<option>Smartphone Android</option>
+							<option>Tablet Android</option>
+							<option>Não informado</option>
+							<option>Outro</option>
+						</select>
+						<select class="form-control" name="device" id="device" ng-if="vm.cadastro.aplicacao == 'MEDREADER'" ng-model="vm.cadastro.device">
+							<option disabled selected value>Selecione a aplicação</option>
+							<option>iPad</option>
+							<option>iPhone</option>
+							<option>Tablet Android</option>
+							<option>Não informado</option>
+							<option>Outro</option>
+						</select>
+						<select class="form-control" name="device" id="device" ng-if="vm.cadastro.aplicacao == 'MEDSOFT'" ng-model="vm.cadastro.device">
+							<option disabled selected value>Selecione a aplicação</option>
+							<option>Computador Windows</option>
+							<option>iPad</option>
+							<option>iPhone</option>
+							<option>Smartphone Android</option>
+							<option>Tablet Android</option>
+							<option>Não informado</option>
+							<option>Outro</option>
+						</select>
+						<select class="form-control" name="device" id="device" ng-if="vm.cadastro.aplicacao == 'Não informada' || vm.cadastro.aplicacao == 'Outra'" ng-model="vm.cadastro.device">
+							<option selected>Outro</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">

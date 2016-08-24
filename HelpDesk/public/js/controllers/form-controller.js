@@ -23,11 +23,11 @@ function limpaCampos() {
 function submitForm() {
   if (!formulario.$valid) {
     $http.post('/cadastro', this.cadastro);
-      console.log(this.cadastro);
-      console.log('Formulario OK');
-      this.limpaCampos();
+    console.log(this.cadastro);
+    console.log('Formulario OK');
+    this.limpaCampos();
   } else {
-      console.log('erro!');
+    console.log('erro!');
   }
 }
 
