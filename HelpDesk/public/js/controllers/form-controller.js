@@ -5,9 +5,9 @@ angular
   .module('helpdesk')
   .controller('formController', formController);
 
-formController.$inject = [];
+formController.$inject = ['$http'];
 
-function formController() {
+function formController($http) {
 
 /* jshint validthis: true*/
 var vm = this;
@@ -22,6 +22,7 @@ function limpaCampos() {
 
 function submitForm() {
   if (!formulario.$valid) {
+    $http.post('/cadastro', this.cadastro);
       console.log(this.cadastro);
       console.log('Formulario OK');
       this.limpaCampos();
