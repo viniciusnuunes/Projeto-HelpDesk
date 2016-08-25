@@ -49,6 +49,15 @@ app.post('/cadastro', function(req, res){
     res.json(doc);
   });
 });
+
+app.get('/cadastro/:id', function (req, res) {
+  var id = req.params.id;
+  console.log(id);
+  db.cadastro.findOne({_id: mongojs.ObjectId(id)}, function (err, doc) {
+    res.json(doc);
+  });
+});
+
 /*    app.post( '/' , function(req, res, next){
 var colaborador = req.body.colaborador;
 
