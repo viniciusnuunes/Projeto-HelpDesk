@@ -27,29 +27,33 @@ app.set('HelpDesk', __dirname + '/views');
 // Conexão com o banco de dados
 mongoose.connect('mongodb://localhost:27017/bancoVinicius', function(err, db) {
   assert.equal(null, err);
-
   console.log("Successfully connected to MongoDB.");
 });
+
+// Redenrizando a página index
 app.get('/', function(req, res){
   console.log('Página Recarregada');
   res.render('index', function(err, html) {
     res.send(html);
   });
-
-
 });
+
+// Renderizando a página consulta
 app.get('/consulta.html', function(req, res){
   console.log('Página Recarregada');
   res.render('consulta', function(err, html) {
     res.send(html);
   });
 });
+
+// Pegando o Json e inserindo no banco de dados
 app.post('/cadastro', function(req, res){
   db.cadastro.insert(req.body, function(err, doc){
     res.json(doc);
   });
 });
 
+// Conexão servidor servidor pegando dados do banco
 app.get('/cadastro/:id', function (req, res) {
   var id = req.params.id;
   console.log(id);

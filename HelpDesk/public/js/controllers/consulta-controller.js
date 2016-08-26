@@ -15,7 +15,7 @@ function consultaController() {
 vm.consultar = consultar;
 
   function consultar() {
-    
+
   }
 
 }
