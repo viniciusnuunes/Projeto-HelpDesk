@@ -58,4 +58,5 @@ input[type=number] {
 }
 .mensagem-validacao {
   color: maroon;
+  position: absolute;
 }

@@ -6,7 +6,7 @@ MongoClient = require('mongodb').MongoClient,
 assert = require('assert'),
 bodyParser = require('body-parser'),
 mongojs = require('mongojs'),
-db = mongojs('teste', ['cadastro']),
+db = mongojs('teste', ['cadastro']), /* 1o parametro: Banco Utilizado / 2o Parametro: Collection Utilizada */
 mongoose = require('mongoose'),
 fs = require('fs');
 

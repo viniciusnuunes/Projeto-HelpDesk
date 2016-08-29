@@ -11,6 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script> <!-- angular script -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.min.js"></script> <!-- Script do Angular Messages -->
 	<script src="/js/app.js"></script>
+	<script src="/js/script.js"></script>
 	<script src="/js/controllers/form-controller.js"></script>
 	<link rel="stylesheet" href="/css/style.css">
 	<title>HelpDesk</title>
@@ -33,12 +34,12 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="consulta.html">Relatórios</a></li>
+							<li><a href="consulta.html"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;Relatórios</a></li>
 							<li><a href="#">Registros</a></li>
 							<li><a href="#">Editor</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Banco de Dados</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>&nbsp;&nbsp;Banco de Dados</a></li>
 					<li><a href="#">Estatisticas</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
@@ -173,8 +174,8 @@
 				</div> <!-- Fim da linha -->
 				<br>
 				<div class="btns">
-					<button class="btn btn-success" type="submit" ng-disabled="!formulario.$valid">Enviar</button>
-					<button class="btn btn-primary" type="reset" ng-click="vm.limpaCampos()">Limpar</button>
+					<button class="btn btn-success" type="submit" ng-disabled="!formulario.$valid"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>&nbsp;&nbsp;Enviar</button>
+					<button class="btn btn-primary" type="reset" ng-click="vm.limpaCampos()"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span>&nbsp;&nbsp;Limpar</button>
 				</div>
 			</form> <!-- Fim do Fomulário -->
 		</div> <!-- Fim da Jumbotron -->
