@@ -60,3 +60,13 @@ input[type=number] {
   color: maroon;
   position: absolute;
 }
+
+.img-responsive {
+  float: left;
+  width: 20px;
+}
+#logohelpdesk {
+  pointer-events: none;
+  cursor: default;
+  color: #fff
+}
