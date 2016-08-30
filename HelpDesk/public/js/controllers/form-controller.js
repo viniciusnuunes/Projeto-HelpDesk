@@ -17,8 +17,8 @@ vm.limpaCampos = limpaCampos;
 
 function limpaCampos() {
   this.cadastro = {};
+  $scope.formulario.$setUntouched();
   console.log("Limpando campos do formulário!");
-  $scope.formulario.setPristine();
 }
 
 function submitForm() {

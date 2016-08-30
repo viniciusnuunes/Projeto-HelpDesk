@@ -60,7 +60,7 @@
 					<div class="form-group col-sm-2">
 						<label for="colaborador">Colaborador</label>
 						<br>
-						<select class="form-control" name="colaborador" id="colaborador" ng-class="varColaborador" ng-model="vm.cadastro.colaborador" ng-blur="!formulario.colaborador.$valid ? varColaborador='alteraFocoErro' : varColaborador=''" ng-required="true">
+						<select class="form-control" name="colaborador" id="colaborador" ng-model="vm.cadastro.colaborador" ng-class="formulario.colaborador.$invalid && formulario.colaborador.$touched ? 'alteraFocoErro' : ''" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
 							<option>Adriano</option>
 							<option>Iana</option>
@@ -73,12 +73,12 @@
 					<div class="form-group col-sm-2">
 						<label for="data">Data</label>
 						<br>
-						<input class="form-control" name="data" id="data" type="date" ng-class="varData" ng-model="vm.cadastro.data" ng-blur="!formulario.data.$valid ? varData='alteraFocoErro' : varData=''" ng-required="true">
+						<input class="form-control" name="data" id="data" type="date" ng-model="vm.cadastro.data" ng-class="formulario.data.$invalid && formulario.data.$touched ? 'alteraFocoErro' : ''" ng-required="true">
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="idAluno">ID Aluno</label>
 						<br>
-						<input class="form-control" name="idAluno" id="idAluno" type="number" ng-class="varIdAluno" ng-model="vm.cadastro.idAluno" ng-blur="!formulario.idAluno.$valid ? varIdAluno='alteraFocoErro' : varIdAluno=''" ng-required="true" ng-minlength="4" ng-maxlength="7">
+						<input class="form-control" name="idAluno" id="idAluno" type="number" ng-model="vm.cadastro.idAluno" ng-class="formulario.idAluno.$invalid && formulario.idAluno.$touched ? 'alteraFocoErro' : ''" ng-required="true" ng-minlength="4" ng-maxlength="7">
 						<div class="mensagem-validacao" ng-messages="formulario.idAluno.$error" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
@@ -87,14 +87,14 @@
 					<div class="form-group col-sm-2">
 						<label for="entrada">Entrada</label>
 						<br>
-						<select class="form-control" name="entrada" id="entrada" ng-class="varEntrada" ng-model="vm.cadastro.entrada" ng-blur="!formulario.entrada.$valid ? varEntrada='alteraFocoErro' : varEntrada=''" ng-options="obj.valor as obj.nome for obj in vm.entrada | orderBy: 'nome'" ng-required="true">
+						<select class="form-control" name="entrada" id="entrada" ng-model="vm.cadastro.entrada" ng-class="formulario.entrada.$invalid && formulario.entrada.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.entrada | orderBy: 'nome'" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="idFreshdesk">ID FreshDesk</label>
 						<br>
-						<input class="form-control" name="idFreshdesk" id="idFreshdesk" type="number" ng-class="varIdFreshdesk" ng-model="vm.cadastro.idFreshdesk" ng-blur="!formulario.idFreshdesk.$valid ? varIdFreshdesk='alteraFocoErro' : varIdFreshdesk=''" ng-disabled="vm.cadastro.entrada != 'Freshdesk'" ng-required="vm.cadastro.entrada == 'Freshdesk'" ng-minlength="4" ng-maxlength="7">
+						<input class="form-control" name="idFreshdesk" id="idFreshdesk" type="number" ng-model="vm.cadastro.idFreshdesk" ng-class="formulario.idFreshdesk.$invalid && formulario.idFreshdesk.$touched ? 'alteraFocoErro' : ''" ng-disabled="vm.cadastro.entrada != 'Freshdesk'" ng-required="vm.cadastro.entrada == 'Freshdesk'" ng-minlength="4" ng-maxlength="7">
 						<div class="mensagem-validacao" ng-messages="formulario.idFreshdesk.$error" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
@@ -103,7 +103,7 @@
 					<div class="form-group col-sm-2">
 						<label for="aplicacao">Aplicação</label>
 						<br>
-						<select class="form-control" name="aplicacao" id="aplicacao" ng-class="varAplicacao" ng-model="vm.cadastro.aplicacao" ng-blur="!formulario.aplicacao.$valid ? varAplicacao='alteraFocoErro' : varAplicacao=''" ng-options="obj.valor as obj.nome for obj in vm.aplicacao | orderBy: 'nome'" ng-required="true">
+						<select class="form-control" name="aplicacao" id="aplicacao" ng-model="vm.cadastro.aplicacao" ng-class="formulario.aplicacao.$invalid && formulario.aplicacao.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.aplicacao | orderBy: 'nome'" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
 						</select>
 					</div>
@@ -113,19 +113,19 @@
 					<div class="form-group col-sm-2">
 						<label for="device">Device</label>
 						<br>
-						<select class="form-control" name="device" id="device" ng-class="varDevice" ng-blur="!formulario.device.$valid ? varDevice='alteraFocoErro' : varDevice=''" ng-model="vm.cadastro.device" ng-options="obj.nome for obj in vm.devices[vm.cadastro.aplicacao] | orderBy: 'nome'" ng-required="true">
+						<select class="form-control" name="device" id="device" ng-model="vm.cadastro.device" ng-class="formulario.device.$invalid && formulario.device.$touched ? 'alteraFocoErro' : ''" ng-options="obj.nome for obj in vm.devices[vm.cadastro.aplicacao] | orderBy: 'nome'" ng-required="true">
 							<option disabled selected value>Selecione a aplicação</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="problema">Problema</label>
 						<br>
-						<input class="form-control" name="problema" id="problema" type="text" ng-class="varProblema" ng-model="vm.cadastro.problema" ng-blur="!formulario.problema.$valid ? varProblema='alteraFocoErro' : varProblema=''" ng-required="true" ng-minlenght="4" ng-maxlenght="255">
+						<input class="form-control" name="problema" id="problema" type="text" ng-model="vm.cadastro.problema" ng-class="formulario.problema.$invalid && formulario.problema.$touched ? 'alteraFocoErro' : ''" ng-required="true" ng-minlenght="4" ng-maxlenght="255">
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="recorrente">Recorrente?</label>
 						<br>
-						<select class="form-control" name="recorrente" id="recorrente" ng-class="varRecorrente" ng-model="vm.cadastro.recorrente" ng-blur="!formulario.recorrente.$valid ? varRecorrente='alteraFocoErro' : varRecorrente=''" ng-required="true">
+						<select class="form-control" name="recorrente" id="recorrente" ng-model="vm.cadastro.recorrente" ng-class="formulario.recorrente.$invalid && formulario.recorrente.$touched ? 'alteraFocoErro' : ''" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
 							<option>Sim</option>
 							<option>Não</option>
@@ -134,14 +134,14 @@
 					<div class="form-group col-sm-2">
 						<label for="origem">Origem</label>
 						<br>
-						<select class="form-control" name="origem" id="origem" ng-class="varOrigem" ng-model="vm.cadastro.origem" ng-blur="!formulario.origem.$valid ? varOrigem='alteraFocoErro' : varOrigem=''" ng-options="obj.valor as obj.nome for obj in vm.origem | orderBy: 'nome'" ng-required="true">
+						<select class="form-control" name="origem" id="origem" ng-model="vm.cadastro.origem" ng-class="formulario.origem.$invalid && formulario.origem.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.origem | orderBy: 'nome'" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
 						<label for="abriuDemanda">Abriu Demanda?</label>
 						<br>
-						<select class="form-control" name="abriuDemanda" id="abriuDemanda" ng-class="varAbriuDemanda" ng-model="vm.cadastro.abriuDemanda" ng-blur="!formulario.abriuDemanda.$valid ? varAbriuDemanda='alteraFocoErro' : varAbriuDemanda=''" ng-required="true">
+						<select class="form-control" name="abriuDemanda" id="abriuDemanda" ng-model="vm.cadastro.abriuDemanda" ng-class="formulario.abriuDemanda.$invalid && formulario.abriuDemanda.$touched ? 'alteraFocoErro' : ''" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
 							<option>Sim</option>
 							<option>Não</option>
@@ -150,7 +150,7 @@
 					<div class="form-group col-sm-2">
 						<label for="status">Status</label>
 						<br>
-						<select class="form-control" name="status" id="status" ng-model="vm.cadastro.status" ng-class="varStatus" ng-blur="!formulario.status.$valid ? varStatus='alteraFocoErro' : varStatus=''" ng-options="obj.valor as obj.nome for obj in vm.status | orderBy: 'nome'" ng-required="true">
+						<select class="form-control" name="status" id="status" ng-model="vm.cadastro.status" ng-class="formulario.status.$invalid && formulario.status.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.status | orderBy: 'nome'" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
 						</select>
 					</div>
@@ -159,17 +159,17 @@
 					<div class="form-group col-sm-4">
 						<label for="diagnostico">Diagnóstico</label>
 						<br>
-						<textarea class="form-control" name="diagnostico" id="diagnostico" rows="2" placeholder="Razão de ter ocorrido o problema (por que esse problema ocorreu?)" ng-model="vm.cadastro.diagnostico" ng-class="varDiagnostico" ng-blur="!formulario.diagnostico.$valid ? varDiagnostico='alteraFocoErro' : varDiagnostico=''" ng-required="true"></textarea>
+						<textarea class="form-control" name="diagnostico" id="diagnostico" rows="2" placeholder="Razão de ter ocorrido o problema (por que esse problema ocorreu?)" ng-model="vm.cadastro.diagnostico" ng-class="formulario.diagnostico.$invalid && formulario.diagnostico.$touched ? 'alteraFocoErro' : ''" ng-required="true"></textarea>
 					</div>
 					<div class="form-group col-sm-4">
 						<label for="resposta">Resposta</label>
 						<br>
-						<textarea class="form-control" name="resposta" id="resposta" rows="2" placeholder="Sua solução ou resposta para o aluno" ng-model="vm.cadastro.resposta" ng-class="varResposta" ng-blur="!formulario.resposta.$valid ? varResposta='alteraFocoErro' : varResposta=''" ng-required="true"></textarea>
+						<textarea class="form-control" name="resposta" id="resposta" rows="2" placeholder="Sua solução ou resposta para o aluno" ng-model="vm.cadastro.resposta" ng-class="formulario.resposta.$invalid && formulario.resposta.$touched ? 'alteraFocoErro' : ''" ng-required="true"></textarea>
 					</div>
 					<div class="form-group col-sm-4">
 						<label for="observacao">Observações</label>
 						<br>
-						<textarea class="form-control" name="observacao" id="observacao" rows="2" placeholder="Informações adicionais sobre o atendimento" ng-model="vm.cadastro.observacao"></textarea>
+						<textarea class="form-control" name="observacao" id="observacao" rows="2" placeholder="Informações adicionais sobre o atendimento" ng-model="vm.cadastro.observacao" ng-class="formulario.observacao.$invalid && formulario.observacao.$touched ? 'alteraFocoErro' : ''"></textarea>
 					</div>
 				</div> <!-- Fim da linha -->
 				<br>
