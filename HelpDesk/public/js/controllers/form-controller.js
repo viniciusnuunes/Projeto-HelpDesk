@@ -5,9 +5,9 @@ angular
   .module('helpdesk')
   .controller('formController', formController);
 
-formController.$inject = ['$http'];
+formController.$inject = ['$http', '$scope'];
 
-function formController($http) {
+function formController($http, $scope) {
 
 /* jshint validthis: true*/
 var vm = this;
@@ -18,6 +18,7 @@ vm.limpaCampos = limpaCampos;
 function limpaCampos() {
   this.cadastro = {};
   console.log("Limpando campos do formulário!");
+  $scope.formulario.setPristine();
 }
 
 function submitForm() {
