@@ -30,7 +30,7 @@ function limpaIdFreshdesk() {
 }
 
 function submitForm() {
-  if (!formulario.$valid) {
+  if (!formulario.$invalid) {
     $http.post('/cadastro', this.cadastro);
     console.log(this.cadastro);
     console.log('Formulario OK');
