@@ -15,6 +15,7 @@ var vm = this;
 vm.limpaCampos = limpaCampos;
 vm.limpaIdFreshdesk = limpaIdFreshdesk;
 vm.submitForm = submitForm;
+vm.consultar = consultar;
 
 function limpaCampos() {
   this.cadastro = {};
@@ -38,6 +39,17 @@ function submitForm() {
   } else {
     console.log('erro!');
   }
+}
+
+function consultar() {
+  $http.get('../cadastro/cadastro.json')
+    .success(function(response) {
+      response = this.cadastro;
+      console.log(response);
+    })
+    .error(function(erro) {
+      console.log("erro");
+    });
 }
 
 // - início - CONTEÚDO DOS OPTIONS DAS SELECTS
