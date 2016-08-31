@@ -17,7 +17,7 @@ vm.limpaIdFreshdesk = limpaIdFreshdesk;
 vm.submitForm = submitForm;
 
 function limpaCampos() {
-  this.cadastro = "";
+  this.cadastro = {};
   $scope.formulario.$setUntouched();
   $scope.formulario.$setPristine();
   console.log("Limpando campos do formulário!");
@@ -25,6 +25,8 @@ function limpaCampos() {
 
 function limpaIdFreshdesk() {
   this.cadastro.idFreshdesk = "";
+  $scope.formulario.idFreshdesk.$setUntouched();
+  $scope.formulario.idFreshdesk.$setPristine();
 }
 
 function submitForm() {
