@@ -12,13 +12,19 @@ function formController($http, $scope) {
 /* jshint validthis: true*/
 var vm = this;
 
-vm.submitForm = submitForm;
 vm.limpaCampos = limpaCampos;
+vm.limpaIdFreshdesk = limpaIdFreshdesk;
+vm.submitForm = submitForm;
 
 function limpaCampos() {
-  this.cadastro = {};
+  this.cadastro = "";
   $scope.formulario.$setUntouched();
+  $scope.formulario.$setPristine();
   console.log("Limpando campos do formulário!");
+}
+
+function limpaIdFreshdesk() {
+  this.cadastro.idFreshdesk = "";
 }
 
 function submitForm() {
