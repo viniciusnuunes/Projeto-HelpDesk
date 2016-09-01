@@ -18,7 +18,7 @@ textarea {
   font-size: 1em;
 }
 .jumbotron {
-  box-shadow: 1px 1px 20px 1px grey;
+  box-shadow: 1px 1px 10px 1px grey;
 }
 h2 {
   font-family: Impact;
@@ -60,8 +60,7 @@ input[type=number] {
   color: maroon;
   position: absolute;
 }
-
-.img-responsive {
+.img-logohelpdesk-menu {
   float: left;
   width: 20px;
 }
@@ -70,12 +69,25 @@ input[type=number] {
   cursor: default;
   color: #fff
 }
-
-.login {
-text-align: center;
-box-shadow: 1px 1px 20px 1px grey;
-border-radius: 5px;
-padding: 40px;
-
-
+/* TELA DE LOGIN */
+.login-box {
+  text-align: center;
+  box-shadow: 1px 1px 10px 1px grey;
+  border-radius: 7px;
+  padding: 40px;
+  margin-top: 15px;
+}
+.img-logohelpdesk-login {
+  margin: auto auto;
+}
+.input-login-margin {
+  margin-bottom: 5px;
+}
+.icon-login-input {
+  position: relative;
+  top: 0px;
+}
+.icon-login-btn {
+  position: relative;
+  top: 2px;
 }
