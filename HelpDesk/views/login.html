@@ -27,14 +27,14 @@
               <br>
               <div class="input-group input-login-margin">
                 <span class="input-group-addon input-lg glyphicon glyphicon-envelope icon-login-input"></span>
-                <input class="form-control input-lg" name="email" id="email" type="email" placeholder="E-mail" ng-model="vm.login.email" ng-required="true"/>
+                <input class="form-control input-lg" name="email" id="email" type="email" placeholder="E-MAIL" ng-model="vm.login.email" ng-class="formularioLogin.email.$invalid && formularioLogin.email.$touched ? 'alteraFocoErro' : ''" ng-required="true"/>
               </div>
               <div class="input-group">
                 <span class="input-group-addon input-lg glyphicon glyphicon-lock icon-login-input"></span>
-                <input class="form-control input-lg" name="password" id="password" type="password" placeholder="Senha" ng-model="vm.login.senha" ng-required="true"/>
+                <input class="form-control input-lg" name="senha" id="senha" type="password" placeholder="SENHA" ng-model="vm.login.senha" ng-class="formularioLogin.senha.$invalid && formularioLogin.senha.$touched ? 'alteraFocoErro' : ''" ng-required="true"/>
               </div>
               <br>
-              <button class="btn btn-success btn-lg btn-block" type="submit" ng-disabled="!formularioLogin.$valid"><span class="glyphicon glyphicon-off icon-login-btn" aria-hidden="true"></span>&nbsp;Entrar</button>
+              <button class="btn btn-success btn-lg btn-block" type="submit" ng-disabled="!formularioLogin.$valid"><span class="glyphicon glyphicon-log-in icon-login-btn" aria-hidden="true"></span>&nbsp;Entrar</button>
               <br>
               <a href="#">Esqueceu a senha?</a> / <a href="#">Trocar senha</a>
             </div>
