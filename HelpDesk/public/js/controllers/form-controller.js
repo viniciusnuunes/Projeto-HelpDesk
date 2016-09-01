@@ -12,17 +12,25 @@ function formController($http, $scope) {
 /* jshint validthis: true*/
 var vm = this;
 
-vm.submitForm = submitForm;
 vm.limpaCampos = limpaCampos;
+vm.limpaIdFreshdesk = limpaIdFreshdesk;
+vm.submitForm = submitForm;
 
 function limpaCampos() {
   this.cadastro = {};
   $scope.formulario.$setUntouched();
+  $scope.formulario.$setPristine();
   console.log("Limpando campos do formulário!");
 }
 
+function limpaIdFreshdesk() {
+  this.cadastro.idFreshdesk = "";
+  $scope.formulario.idFreshdesk.$setUntouched();
+  $scope.formulario.idFreshdesk.$setPristine();
+}
+
 function submitForm() {
-  if (!formulario.$valid) {
+  if (!formulario.$invalid) {
     $http.post('/cadastro', this.cadastro);
     console.log(this.cadastro);
     console.log('Formulario OK');

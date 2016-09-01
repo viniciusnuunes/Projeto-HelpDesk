@@ -79,7 +79,7 @@
 						<label for="idAluno">ID Aluno</label>
 						<br>
 						<input class="form-control" name="idAluno" id="idAluno" type="number" ng-model="vm.cadastro.idAluno" ng-class="formulario.idAluno.$invalid && formulario.idAluno.$touched ? 'alteraFocoErro' : ''" ng-required="true" ng-minlength="4" ng-maxlength="7">
-						<div class="mensagem-validacao" ng-messages="formulario.idAluno.$error" role="alert">
+						<div class="mensagem-validacao" ng-messages="formulario.idAluno.$error" ng-show="formulario.idAluno.$dirty" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
 						</div>
@@ -87,7 +87,7 @@
 					<div class="form-group col-sm-2">
 						<label for="entrada">Entrada</label>
 						<br>
-						<select class="form-control" name="entrada" id="entrada" ng-model="vm.cadastro.entrada" ng-class="formulario.entrada.$invalid && formulario.entrada.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.entrada | orderBy: 'nome'" ng-required="true">
+						<select class="form-control" name="entrada" id="entrada" ng-model="vm.cadastro.entrada" ng-class="formulario.entrada.$invalid && formulario.entrada.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.entrada | orderBy: 'nome'" ng-change="vm.limpaIdFreshdesk()" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
 						</select>
 					</div>
@@ -95,7 +95,7 @@
 						<label for="idFreshdesk">ID FreshDesk</label>
 						<br>
 						<input class="form-control" name="idFreshdesk" id="idFreshdesk" type="number" ng-model="vm.cadastro.idFreshdesk" ng-class="formulario.idFreshdesk.$invalid && formulario.idFreshdesk.$touched ? 'alteraFocoErro' : ''" ng-disabled="vm.cadastro.entrada != 'Freshdesk'" ng-required="vm.cadastro.entrada == 'Freshdesk'" ng-minlength="4" ng-maxlength="7">
-						<div class="mensagem-validacao" ng-messages="formulario.idFreshdesk.$error" role="alert">
+						<div class="mensagem-validacao" ng-messages="formulario.idFreshdesk.$error" ng-show="formulario.idFreshdesk.$dirty" role="alert">
 							<div ng-message="minlength">Curto demais</div>
 							<div ng-message="maxlength">Longo demais</div>
 						</div>
