@@ -46,6 +46,14 @@ app.get('/consulta.html', function(req, res){
   });
 });
 
+// Renderizando a página consulta
+app.get('/login.html', function(req, res){
+  console.log('Página Recarregada');
+  res.render('login', function(err, html) {
+    res.send(html);
+  });
+});
+
 // Pegando o Json e inserindo no banco de dados
 app.post('/cadastro', function(req, res){
   db.cadastro.insert(req.body, function(err, doc){
