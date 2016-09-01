@@ -70,3 +70,12 @@ input[type=number] {
   cursor: default;
   color: #fff
 }
+
+.login {
+text-align: center;
+box-shadow: 1px 1px 20px 1px grey;
+border-radius: 5px;
+padding: 40px;
+
+
+}
