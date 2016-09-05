@@ -1,24 +1,64 @@
-var mongoose = require('mongoose'),
-Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Scheme = mongoose.Schema;
 
-var cadastroSchema = new Schema({
-  colaborador: String,
-  data: Date,
-  idAluno: Number,
-  entrada: String,
-  idFreshdesk: Number,
-  aplicacao: String,
-  device: String,
-  problema: String,
-  recorrente: Boolean,
-  origem: String,
-  abriuDemanda: Boolean,
-  status: String,
-  diagnostico: String,
-  resposta: String,
-  observacao: String,
-});
+var cadastro = {
+  idAtend : {
+    type:Schema.Types.ObjectId,
+    ref: 'Atendimento'
+  },
+  colaborador : {
+    type: String,
+    require:true
+  },
+  data : {
+    type:Date,
+  },
+  idAluno : {
+    type:Number,
+    require:true
+  },
+  entrada : {
+    type:String,
+  },
+  idFreshdesk : {
+    type:Number
+  },
+  aplicacao : {
+    type:String
+  },
+  device : {
+    type:String
+  },
+  problema : {
+    type:String
+  },
+  recorrente : {
+    type:Boolean
+  },
+  origem : {
+    type:String,
+    require:true
+  },
+  abriuDemanda : {
+    type:Boolean
+  },
+  status : {
+    type:String,
+    require:true
+  },
+  diagnostico : {
+    type:String,
+    require:true
+  },
+  resposta : {
+    type:String,
+    require:true
+  },
+  observacao : {
+    type:String,
+  },
+};
 
-mongoose.model('cadastro', cadastroSchema);
+var cadastroSchema = new Schema(cadastro);
 
-var salvarDados = mongoose.model('cadastro', cadastroSchema);
+module.exports = mongoose.model('Cadastro', cadastroSchema);
