@@ -1,5 +1,9 @@
+
+/* jshint esversion:6*/
+
+
 const mongoose = require('mongoose');
-const Scheme = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 var cadastro = {
   idAtend : {
