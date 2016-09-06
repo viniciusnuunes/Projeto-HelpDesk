@@ -14,12 +14,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css"> <!-- Transição entre telas -->
 	<script src="/js/app.js"></script>
 	<script src="/js/script.js"></script>
-	<script src="/js/controllers/form-controller.js"></script>
+	<script src="/js/controllers/cadastro-controller.js"></script>
 	<link rel="stylesheet" href="/css/style.css">
 	<title>HelpDesk</title>
 </head>
 
-<body ng-controller="formController as vm" class="animsition" data-animsition-in-class="zoom-in-sm" data-animsition-in-duration="1000" data-animsition-out-class="zoom-out-sm" data-animsition-out-duration="800">
+<body ng-controller="cadastroController as vm" class="animsition" data-animsition-in-class="zoom-in-sm" data-animsition-in-duration="1000" data-animsition-out-class="zoom-out-sm" data-animsition-out-duration="800">
 	<nav class="navbar navbar-inverse"> <!-- Inicio da Navbar -->
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -36,7 +36,7 @@
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="consulta.html"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;&nbsp;Relatórios</a></li>
+							<li><a href="views/consulta.html"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;&nbsp;Relatórios</a></li>
 							<li class="disabled"><a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbsp;&nbsp;Informações</a></li>
 							<li class="disabled"><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;&nbsp;Editor</a></li>
 						</ul>

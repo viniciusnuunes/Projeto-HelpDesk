@@ -3,11 +3,11 @@
 
 angular
   .module('helpdesk')
-  .controller('formController', formController);
+  .controller('cadastroController', cadastroController);
 
-formController.$inject = ['$http', '$scope'];
+cadastroController.$inject = ['$http', '$scope'];
 
-function formController($http, $scope) {
+function cadastroController($http, $scope) {
 
 /* jshint validthis: true*/
 var vm = this;
