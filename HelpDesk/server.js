@@ -1,26 +1,25 @@
 //Conexão com o express
-var express = require('express'),
-app = express(),
+var http = require('http');
+var app = require('./config/express');
 engines = require('Consolidate'),
 MongoClient = require('mongodb').MongoClient,
 assert = require('assert'),
-bodyParser = require('body-parser'),
 mongojs = require('mongojs'),
 db = mongojs('teste', ['cadastro']), /* 1o parametro: Banco Utilizado / 2o Parametro: Collection Utilizada */
 mongoose = require('mongoose'),
-fs = require('fs');
+//fs = require('fs');
+//
+//  fs.readdirSync(__dirname + '/models'). forEach(function(filename){
+//  if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename
+//);
+//});
 
-  fs.readdirSync(__dirname + '/models'). forEach(function(filename){
-  if (~filename.indexOf('.js')) require(__dirname + '/models/' + filename
-);
-});
+//app.use('/', express.static(__dirname + '/public'));
+//app.use(bodyParser.json());
 
-app.use('/', express.static(__dirname + '/public'));
-app.use(bodyParser.json());
-
-app.engine('html', engines.nunjucks);
-app.set('view engine', 'html');
-app.set('HelpDesk', __dirname + '/views');
+//app.engine('html', engines.nunjucks);
+//app.set('view engine', 'html');
+//app.set('HelpDesk', __dirname + '/views');
 
 
 
@@ -30,6 +29,7 @@ mongoose.connect('mongodb://localhost:27017/bancoVinicius', function(err, db) {
   console.log("Successfully connected to MongoDB.");
 });
 
+/*
 // Redenrizando a página index
 app.get('/', function(req, res){
   console.log('Página Recarregada');
@@ -87,7 +87,8 @@ app.use(function(req, res){
   res.sendStatus(404);
 });
 //se funcionar
-  var server = app.listen(3000, function() {
-  var port = server.address().port;
-  console.log('Express server listening on port %s.', port);
+
+http.createServer(app)
+  .listen(3000, function() {
+  console.log('Servidor iniciado');
 });

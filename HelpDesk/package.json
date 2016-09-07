@@ -25,6 +25,7 @@
   "dependencies": {
     "angular-route": "^1.5.8",
     "body-parser": "^1.15.2",
+    "consign": "^0.1.2",
     "consolidate": "^0.14.1",
     "express": "^4.14.0",
     "gridfs-stream": "^1.1.1",
