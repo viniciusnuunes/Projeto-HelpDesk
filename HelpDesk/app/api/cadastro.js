@@ -21,7 +21,7 @@ api.buscaPorId = function(req, res) {
   model
     .findById(req.params.id)
     .then(function(cadastro) {
-      if(!cadastro) throw Error('Foto não encontrada');
+      if(!cadastro) throw Error('Cadastro não encontrado');
       res.json(cadastro);
 
     }, function(error) {

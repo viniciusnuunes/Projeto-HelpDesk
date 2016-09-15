@@ -25,7 +25,7 @@ aplicacao : {
   type:String
 },
 device : {
-  type:String
+  type:Object
 },
 problema : {
   type:String

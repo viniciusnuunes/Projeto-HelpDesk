@@ -6,10 +6,10 @@ angular
   .module('helpdesk')
   .service('cadastroService', cadastroService);
 
-cadastroService.$inject = ['$http'];
+cadastroService.$inject = ['$http', 'ngResource'];
 
 function cadastroService($http){
-  const url = "/api/cadastro";
+  const url = "/v1/cadastros";
 
   this.submitForm = function(cadastro){
     return $http.post(url, cadastro);
