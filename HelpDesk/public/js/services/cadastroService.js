@@ -1,20 +1,19 @@
 /*jshint esversion:6 */
-
 (function(){
-  'use strict';
+'use strict';
 
 angular
-.module('helpdesk')
-.service('FormService', FormService);
+  .module('helpdesk')
+  .service('cadastroService', cadastroService);
 
-FormService.$inject = ['$http'];
+cadastroService.$inject = ['$http'];
 
-function FormService($http){
+function cadastroService($http){
   const url = "/api/cadastro";
 
   this.submitForm = function(cadastro){
     return $http.post(url, cadastro);
-    
+
   };
 }
 }());
