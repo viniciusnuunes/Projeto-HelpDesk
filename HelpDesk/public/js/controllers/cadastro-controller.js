@@ -5,9 +5,9 @@ angular
   .module('helpdesk')
   .controller('cadastroController', cadastroController);
 
-cadastroController.$inject = ['$http', '$scope'];
+cadastroController.$inject = ['$http', '$scope', '$routeParams'];
 
-function cadastroController($http, $scope) {
+function cadastroController($http, $scope, $routeParams) {
 
 /* jshint validthis: true*/
 var vm = this;
@@ -42,14 +42,16 @@ function submitForm() {
 }
 
 function consultar() {
-  $http.get('../cadastro/cadastro.json')
-    .success(function(response) {
-      response = this.cadastro;
-      console.log(response);
+  var promisse = $http.get('/v1/cadastros');
+  promisse
+    .then(function(response) {
+      vm.cadastro = response.data;
+      console.log(vm.cadastro);
     })
-    .error(function(erro) {
-      console.log("erro");
+    .catch(function(erro) {
+      console.log(erro);
     });
+
 }
 
 // - início - CONTEÚDO DOS OPTIONS DAS SELECTS

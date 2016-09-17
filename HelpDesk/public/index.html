@@ -11,6 +11,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script> <!-- angular script -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-messages/1.5.8/angular-messages.min.js"></script> <!-- Script do Angular Messages -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-resource/1.5.8/angular-resource.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script> <!-- Transição entre telas -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/css/animsition.min.css"> <!-- Transição entre telas -->
 	<script src="/js/app.js"></script>
@@ -130,8 +131,8 @@
 						<br>
 						<select class="form-control" name="recorrente" id="recorrente" ng-model="vm.cadastro.recorrente" ng-class="formulario.recorrente.$invalid && formulario.recorrente.$touched ? 'alteraFocoErro' : ''" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
-							<option>Sim</option>
-							<option>Não</option>
+							<option value="true">Sim</option>
+							<option value="false">Não</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
@@ -146,8 +147,8 @@
 						<br>
 						<select class="form-control" name="abriuDemanda" id="abriuDemanda" ng-model="vm.cadastro.abriuDemanda" ng-class="formulario.abriuDemanda.$invalid && formulario.abriuDemanda.$touched ? 'alteraFocoErro' : ''" ng-required="true">
 							<option disabled selected value>Selecione uma opção</option>
-							<option>Sim</option>
-							<option>Não</option>
+							<option value="true">Sim</option>
+							<option value="false">Não</option>
 						</select>
 					</div>
 					<div class="form-group col-sm-2">
