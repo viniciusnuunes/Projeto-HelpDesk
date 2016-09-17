@@ -4,16 +4,16 @@ var api = {};
 
 var model = mongoose.model('Cadastro');
 
+var erroApi = require('./callBacks');
+
 api.lista = function(req, res) {
 
   model
     .find({})
     .then(function(cadastros) {
         res.json(cadastros);
-    }, function(error) {
-          console.log(error);
-          res.status(500).json(error);
-    });
+    }, erroApi.callbackFind
+  );
 };
 
 api.buscaPorId = function(req, res) {
@@ -23,11 +23,8 @@ api.buscaPorId = function(req, res) {
     .then(function(cadastro) {
       if(!cadastro) throw Error('Cadastro não encontrado');
       res.json(cadastro);
-
-    }, function(error) {
-          console.log(error);
-          res.status(404).json(error);
-    });
+    }, erroApi.callbackFindById
+  );
 };
 
 api.removePorId = function(req, res) {
@@ -37,32 +34,27 @@ api.removePorId = function(req, res) {
     .then(function() {
         res.sendStatus(204);
 
-    }, function(error) {
-          console.log(error);
-          res.status(500).json(error);
-    });
+    }, erroApi.callbackRemove
+  );
 };
 
 api.adiciona = function(req, res) {
 
-        model.create(req.body)
-        .then(function(cadastro) {
-            res.json(cadastro);
-        }, function(error) {
-            console.log(error);
-            res.sendStatus(500);
-        });
-    };
+  model
+    .create(req.body)
+    .then(function(cadastro) {
+        res.json(cadastro);
+    }, erroApi.callbackSave
+  );
+};
 
 api.atualiza = function (req, res) {
   model
     .findByIdAndUpdate(req.params.id, req.body)
     .then(function() {
         res.json(cadastro);
-    }, function(error) {
-        console.log(error);
-        res.sendStatus(500);
-    });
+    }, erroApi.callbackUpdate
+  );
 };
 
 module.exports = api;
