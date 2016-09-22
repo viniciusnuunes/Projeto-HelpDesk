@@ -5,7 +5,7 @@ angular
   .module('helpdesk')
   .controller('cadastroController', cadastroController);
 
-cadastroController.$inject = ['$http', '$scope', '$routeParams'];
+cadastroController.$inject = ['$http', '$scope', '$routeParams','cadastroService'];
 
 function cadastroController($http, $scope, $routeParams) {
 
@@ -17,43 +17,45 @@ vm.limpaIdFreshdesk = limpaIdFreshdesk;
 vm.submitForm = submitForm;
 vm.consultar = consultar;
 
-function limpaCampos() {
-  this.cadastro = {};
-  $scope.formulario.$setUntouched();
-  $scope.formulario.$setPristine();
-  console.log("Limpando campos do formulário!");
+function limpaCampos(formulario) {
+  if(formulario){
+    vm.cadastro = {};
+    formulario.$setUntouched();
+    formulario.$setPristine();
+    console.log("Limpando campos do formulário!");
+}
 }
 
-function limpaIdFreshdesk() {
-  this.cadastro.idFreshdesk = "";
-  $scope.formulario.idFreshdesk.$setUntouched();
-  $scope.formulario.idFreshdesk.$setPristine();
+function limpaIdFreshdesk(formulario) {
+  if(formulario){
+  vm.cadastro.idFreshdesk = "";
+  formulario.idFreshdesk.$setUntouched();
+  formulario.idFreshdesk.$setPristine();
+}
 }
 
-function submitForm() {
-  if (!formulario.$invalid) {
-    $http.post('/v1/cadastros', this.cadastro);
-    console.log(this.cadastro);
+function submitForm(formulario) {
+cadastroService.submitForm(formulario)
+  .success (function(data) {
     console.log('Formulario OK');
-    this.limpaCampos();
-  } else {
-    console.log('erro!');
-  }
+    vm.limpaCampos();
+  })
+  .error (function(data){
+    console.log(data);
+  });
 }
 
 function consultar() {
-  var promisse = $http.get('/v1/cadastros');
-  promisse
-    .then(function(response) {
-      vm.cadastro = response.data;
-      console.log(vm.cadastro);
-    })
-    .catch(function(erro) {
-      console.log(erro);
-    });
 
+cadastroService.consultar()
+.success(function(data){
+  vm.cadastro = data;
+})
+.error(function(data){
+  console.log(data);
+
+});
 }
-
 // - início - CONTEÚDO DOS OPTIONS DAS SELECTS
 vm.aplicacao = [
   { "valor": "AREA_RESTRITA", "nome": "AREA RESTRITA" },
