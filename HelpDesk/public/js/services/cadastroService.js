@@ -6,14 +6,33 @@ angular
   .module('helpdesk')
   .service('cadastroService', cadastroService);
 
-cadastroService.$inject = ['$http', 'ngResource'];
-
 function cadastroService($http){
+  var vm = this;
   const url = "/v1/cadastros";
 
-  this.submitForm = function(cadastro){
+  vm.submitForm = function(cadastro){
+    console.log(cadastro);
     return $http.post(url, cadastro);
 
   };
+
+  vm.consultar = function (cadastro){
+      var promisse = $http.get(url);
+    promisse
+      .then(function(response) {
+        vm.cadastro = response.data;
+        console.log(vm.cadastro);
+      })
+      .catch(function(erro) {
+        console.log(erro);
+      });
+      return $http.get();
+
+
+  }
+
+
 }
+
+
 }());
