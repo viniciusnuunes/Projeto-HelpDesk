@@ -5,7 +5,7 @@ angular
   .module('helpdesk')
   .controller('cadastroController', cadastroController);
 
-cadastroController.$inject = ['$http', '$scope', '$routeParams'];
+//cadastroController.$inject = ['$http', '$scope', '$routeParams'];
 
 function cadastroController($http, $scope, $routeParams, cadastroService) {
 
@@ -34,14 +34,15 @@ function limpaIdFreshdesk(formCadastro) {
 }
 
 function submitForm(formCadastro) {
+  //console.log(formCadastro);
   cadastroService.submitForm(formCadastro)
-    .success (function(data) {
+    .success(function(formCadastro) {
       console.log('Formulario OK');
-      console.log(cadastro);
-      vm.limpaCampos(formCadastro);
+      console.log(formCadastro);
+      //vm.limpaCampos(formCadastro);
     })
-    .error (function(data){
-      console.log(data);
+    .error(function(formCadastro){
+      console.log(formCadastro);
     });
 }
 

@@ -1,4 +1,6 @@
-/*jshint esversion:6 */
+/*jslint node: true */
+/*jshint esversion: 6 */
+
 (function() {
 'use strict';
 
