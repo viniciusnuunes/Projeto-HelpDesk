@@ -5,9 +5,9 @@ angular
   .module('helpdesk')
   .controller('cadastroController', cadastroController);
 
-cadastroController.$inject = ['$http', '$scope', '$routeParams','cadastroService'];
+cadastroController.$inject = ['$http', '$scope', '$routeParams'];
 
-function cadastroController($http, $scope, $routeParams) {
+function cadastroController($http, $scope, $routeParams, cadastroService) {
 
 /* jshint validthis: true*/
 var vm = this;
@@ -17,44 +17,43 @@ vm.limpaIdFreshdesk = limpaIdFreshdesk;
 vm.submitForm = submitForm;
 vm.consultar = consultar;
 
-function limpaCampos(formulario) {
-  if(formulario){
+function limpaCampos(formCadastro) {
+  if(formCadastro){
     vm.cadastro = {};
-    formulario.$setUntouched();
-    formulario.$setPristine();
-    console.log("Limpando campos do formulário!");
-}
-}
-
-function limpaIdFreshdesk(formulario) {
-  if(formulario){
-  vm.cadastro.idFreshdesk = "";
-  formulario.idFreshdesk.$setUntouched();
-  formulario.idFreshdesk.$setPristine();
-}
+    formCadastro.$setUntouched();
+    formCadastro.$setPristine();
+  }
 }
 
-function submitForm(formulario) {
-cadastroService.submitForm(formulario)
-  .success (function(data) {
-    console.log('Formulario OK');
-    vm.limpaCampos();
-  })
-  .error (function(data){
-    console.log(data);
-  });
+function limpaIdFreshdesk(formCadastro) {
+  if(formCadastro){
+    vm.cadastro.idFreshdesk = "";
+    formCadastro.idFreshdesk.$setUntouched();
+    formCadastro.idFreshdesk.$setPristine();
+  }
+}
+
+function submitForm(formCadastro) {
+  cadastroService.submitForm(formCadastro)
+    .success (function(data) {
+      console.log('Formulario OK');
+      console.log(cadastro);
+      vm.limpaCampos(formCadastro);
+    })
+    .error (function(data){
+      console.log(data);
+    });
 }
 
 function consultar() {
-
-cadastroService.consultar()
-.success(function(data){
-  vm.cadastro = data;
-})
-.error(function(data){
-  console.log(data);
-
-});
+  cadastroService.consultar()
+    .success(function(data){
+      vm.cadastro = response.data;
+      console.log(vm.cadastro);
+    })
+    .error(function(data){
+      console.log(data);
+    });
 }
 // - início - CONTEÚDO DOS OPTIONS DAS SELECTS
 vm.aplicacao = [

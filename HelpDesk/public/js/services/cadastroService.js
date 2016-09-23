@@ -1,38 +1,22 @@
 /*jshint esversion:6 */
-(function(){
+(function() {
 'use strict';
 
 angular
   .module('helpdesk')
   .service('cadastroService', cadastroService);
 
-function cadastroService($http){
-  var vm = this;
+function cadastroService($http) {
+
   const url = "/v1/cadastros";
 
-  vm.submitForm = function(cadastro){
-    console.log(cadastro);
-    return $http.post(url, cadastro);
-
+  this.submitForm = function(formCadastro) {
+    return $http.post(url, formCadastro);
   };
 
-  vm.consultar = function (cadastro){
-      var promisse = $http.get(url);
-    promisse
-      .then(function(response) {
-        vm.cadastro = response.data;
-        console.log(vm.cadastro);
-      })
-      .catch(function(erro) {
-        console.log(erro);
-      });
-      return $http.get();
-
-
-  }
-
+  this.consultar = function() {
+    return $http.get(url);
+  };
 
 }
-
-
-}());
+})();
