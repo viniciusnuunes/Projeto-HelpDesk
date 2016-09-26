@@ -22,6 +22,7 @@ function limpaCampos(formCadastro) {
     vm.cadastro = {};
     formCadastro.$setUntouched();
     formCadastro.$setPristine();
+    delete vm.cadastro;
   }
 }
 
@@ -33,16 +34,16 @@ function limpaIdFreshdesk(formCadastro) {
   }
 }
 
-function submitForm(formCadastro) {
+function submitForm(cadastro,formCadastro) {
   //console.log(formCadastro);
-  cadastroService.submitForm(formCadastro)
-    .success(function(formCadastro) {
+  cadastroService.submitForm(cadastro)
+    .success(function(cadastro) {
       console.log('Formulario OK');
-      console.log(formCadastro);
-      //vm.limpaCampos(formCadastro);
+      console.log(cadastro);
+      limpaCampos(formCadastro);
     })
-    .error(function(formCadastro){
-      console.log(formCadastro);
+    .error(function(cadastro){
+      console.log(cadastro);
     });
 }
 
