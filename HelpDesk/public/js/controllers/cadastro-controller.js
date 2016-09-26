@@ -19,7 +19,6 @@ vm.consultar = consultar;
 
 function limpaCampos(formCadastro) {
   if(formCadastro){
-    vm.cadastro = {};
     formCadastro.$setUntouched();
     formCadastro.$setPristine();
     delete vm.cadastro;
@@ -35,10 +34,8 @@ function limpaIdFreshdesk(formCadastro) {
 }
 
 function submitForm(cadastro,formCadastro) {
-  //console.log(formCadastro);
   cadastroService.submitForm(cadastro)
     .success(function(cadastro) {
-      console.log('Formulario OK');
       console.log(cadastro);
       limpaCampos(formCadastro);
     })
