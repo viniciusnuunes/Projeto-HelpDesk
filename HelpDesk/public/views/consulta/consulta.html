@@ -1,0 +1,267 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2>
+            Relatórios
+            <small class="text-muted">HelpDesk</small>
+        </h2>
+        <br>
+        <form novalidate name="formConsulta" class="form-horizontal" role="form" ng-submit="vm.consultar()">
+            <div class="form-group">
+                <p class="col-sm-2 control-label"><span class="glyphicon glyphicon-search"></span> Pesquisar</p>
+                <div class="col-sm-4"></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="idAluno">ID Aluno:</label>
+                <div class="col-sm-4">
+                    <input type="number" id="idAluno" name="idAluno" ng-model="vm.cadastro.idAluno" class="form-control" ng-minlength="4" ng-maxlength="7" ng-required="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="dataDe">De:</label>
+                <div class="col-sm-4">
+                    <input name="data" id="dataDe" ng-model="vm.cadastro.dataDe" class="form-control" type="date" ng-required="true">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="dataAte">Até:</label>
+                <div class="col-sm-4">
+                    <input name="data" id="dataAte" ng-model="vm.cadastro.dataAte" class="form-control" type="date">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label" for="btnSubmit-consulta"></label>
+                <div class="col-sm-4">
+                    <button type="submit" id="btnSubmit-consulta" class="btn btn-success" ng-disabled="!formConsulta.$valid">OK</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Colaborador
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Adriano</a></li>
+                            <li><a href="#">Iana</a></li>
+                            <li><a href="#">Julia</a></li>
+                            <li><a href="#">Pedro</a></li>
+                            <li><a href="#">Vinicius</a></li>
+                            <li><a href="#">Ygor</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Entrada
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Demanda</a></li>
+                            <li><a href="#">E-mail</a></li>
+                            <li><a href="#">Fresh Desk</a></li>
+                            <li><a href="#">Spark</a></li>
+                            <li><a href="#">Telefone</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Origem
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Aluno</a></li>
+                            <li><a href="#">MEDGRUPO</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Aplicação
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Área Restrita</a></li>
+                            <li><a href="#">MedSoft</a></li>
+                            <li><a href="#">MedCode</a></li>
+                            <li><a href="#">MedReader</a></li>
+                            <li><a href="#">MedEletro</a></li>
+                            <li><a href="#">Todos</a></li>
+                            <li><a href="#">Não Informado</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Device
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">iPhone</a></li>
+                            <li><a href="#">iPad</a></li>
+                            <li><a href="#">Smartphone</a></li>
+                            <li><a href="#">Tablet</a></li>
+                            <li><a href="#">Computador Windows</a></li>
+                            <li><a href="#">Computador Mac</a></li>
+                            <li><a href="#">Todos</a></li>
+                            <li><a href="#">Não Informado</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Status
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Solucionado</a></li>
+                            <li><a href="#">Pendente</a></li>
+                            <li><a href="#">Parcial</a></li>
+                            <li><a href="#">Tablet</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Problemas
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">XXXXXXXXXXX</a></li>
+                            <li><a href="#">XXXXXXXXXXX</a></li>
+                            <li><a href="#">XXXXXXXXXXX</a></li>
+                            <li><a href="#">XXXXXXXXXXX</a></li>
+                            <li><a href="#">XXXXXXXXXXX</a></li>
+                            <li><a href="#">XXXXXXXXXXX</a></li>
+                            <li><a href="#">XXXXXXXXXXX</a></li>
+                            <li><a href="#">XXXXXXXXXXX</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">ID FreshDesk
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">150500</a></li>
+                            <li><a href="#">185642</a></li>
+                            <li><a href="#">204458</a></li>
+                            <li><a href="#">189665</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">ID Aluno
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">150500</a></li>
+                            <li><a href="#">185642</a></li>
+                            <li><a href="#">204458</a></li>
+                            <li><a href="#">189665</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Data
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">20/05/1985</a></li>
+                            <li><a href="#">05/12/2000</a></li>
+                            <li><a href="#">05/12/2000</a></li>
+                            <li><a href="#">05/12/2000</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Diagnóstico
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Resposta
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                        </ul>
+                    </div>
+                </th>
+                <th>
+                    <div class="dropdown">
+                        <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">Observações
+                            <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                            <li><a href="#">Blá bla bla bla bla bla bla bla lb la bla bla</a></li>
+                        </ul>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+                <td>Exemplo</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

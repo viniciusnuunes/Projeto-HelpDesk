@@ -35,11 +35,11 @@
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;&nbsp;Início</a></li>
+					<li><a href="../"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;&nbsp;Início</a></li>
 					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+						<a class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="views/consulta.html"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;&nbsp;Relatórios</a></li>
+							<li><a href="#/consulta"><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;&nbsp;Relatórios</a></li>
 							<li class="disabled"><a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbsp;&nbsp;Informações</a></li>
 							<li class="disabled"><a href="#"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>&nbsp;&nbsp;Editor</a></li>
 						</ul>
@@ -53,138 +53,9 @@
 			</div>
 		</div>
 	</nav> <!-- Fim da Navbar -->
-	<div class="container">
-		<div class="jumbotron">
-			<h2>
-				Cadastro de Atendimento
-				<small class="text-muted">HelpDesk</small>
-			</h2>
-			<br>
-			<form class="form" name="formCadastro" id="formulario" novalidate ng-submit="vm.submitForm(vm.cadastro,formCadastro)"> <!-- Inicio do Fomulário -->
-				<div class="row">
-					<div class="form-group col-sm-2">
-						<label for="colaborador">Colaborador</label>
-						<br>
-						<select class="form-control" name="colaborador" id="colaborador" ng-model="vm.cadastro.colaborador" ng-class="formCadastro.colaborador.$invalid && formCadastro.colaborador.$touched ? 'alteraFocoErro' : ''" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
-							<option>Adriano</option>
-							<option>Iana</option>
-							<option>Julia</option>
-							<option>Pedro</option>
-							<option>Vinicius</option>
-							<option>Ygor</option>
-						</select>
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="data">Data</label>
-						<br>
-						<input class="form-control" name="data" id="data" type="date" ng-model="vm.cadastro.data" ng-class="formCadastro.data.$invalid && formCadastro.data.$touched ? 'alteraFocoErro' : ''" ng-required="true">
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="idAluno">ID Aluno</label>
-						<br>
-						<input class="form-control" name="idAluno" id="idAluno" type="number" ng-model="vm.cadastro.idAluno" ng-class="formCadastro.idAluno.$invalid && formCadastro.idAluno.$touched ? 'alteraFocoErro' : ''" ng-required="true" ng-minlength="4" ng-maxlength="7">
-						<div class="mensagem-validacao" ng-messages="formCadastro.idAluno.$error" ng-show="formCadastro.idAluno.$dirty" role="alert">
-							<div ng-message="minlength">Curto demais</div>
-							<div ng-message="maxlength">Longo demais</div>
-						</div>
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="entrada">Entrada</label>
-						<br>
-						<select class="form-control" name="entrada" id="entrada" ng-model="vm.cadastro.entrada" ng-class="formCadastro.entrada.$invalid && formCadastro.entrada.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.entrada | orderBy: 'nome'" ng-change="vm.limpaIdFreshdesk(formCadastro)" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
-						</select>
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="idFreshdesk">ID FreshDesk</label>
-						<br>
-						<input class="form-control" name="idFreshdesk" id="idFreshdesk" type="number" ng-model="vm.cadastro.idFreshdesk" ng-class="formCadastro.idFreshdesk.$invalid && formCadastro.idFreshdesk.$touched ? 'alteraFocoErro' : ''" ng-disabled="vm.cadastro.entrada != 'Freshdesk'" ng-required="vm.cadastro.entrada == 'Freshdesk'" ng-minlength="4" ng-maxlength="7">
-						<div class="mensagem-validacao" ng-messages="formCadastro.idFreshdesk.$error" ng-show="formCadastro.idFreshdesk.$dirty" role="alert">
-							<div ng-message="minlength">Curto demais</div>
-							<div ng-message="maxlength">Longo demais</div>
-						</div>
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="aplicacao">Aplicação</label>
-						<br>
-						<select class="form-control" name="aplicacao" id="aplicacao" ng-model="vm.cadastro.aplicacao" ng-class="formCadastro.aplicacao.$invalid && formCadastro.aplicacao.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.aplicacao | orderBy: 'nome'" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
-						</select>
-					</div>
-				</div> <!-- Fim da linha -->
-				<br>
-				<div class="row"> <!-- Inicio da linha -->
-					<div class="form-group col-sm-2">
-						<label for="device">Device</label>
-						<br>
-						<select class="form-control" name="device" id="device" ng-model="vm.cadastro.device" ng-class="formCadastro.device.$invalid && formCadastro.device.$touched ? 'alteraFocoErro' : ''" ng-options="obj.nome for obj in vm.devices[vm.cadastro.aplicacao] | orderBy: 'nome'" ng-required="true">
-							<option disabled selected value>Selecione a aplicação</option>
-						</select>
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="problema">Problema</label>
-						<br>
-						<input class="form-control" name="problema" id="problema" type="text" ng-model="vm.cadastro.problema" ng-class="formCadastro.problema.$invalid && formCadastro.problema.$touched ? 'alteraFocoErro' : ''" ng-required="true" ng-minlenght="4" ng-maxlenght="255">
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="recorrente">Recorrente?</label>
-						<br>
-						<select class="form-control" name="recorrente" id="recorrente" ng-model="vm.cadastro.recorrente" ng-class="formCadastro.recorrente.$invalid && formCadastro.recorrente.$touched ? 'alteraFocoErro' : ''" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
-							<option value="true">Sim</option>
-							<option value="false">Não</option>
-						</select>
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="origem">Origem</label>
-						<br>
-						<select class="form-control" name="origem" id="origem" ng-model="vm.cadastro.origem" ng-class="formCadastro.origem.$invalid && formCadastro.origem.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.origem | orderBy: 'nome'" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
-						</select>
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="abriuDemanda">Abriu Demanda?</label>
-						<br>
-						<select class="form-control" name="abriuDemanda" id="abriuDemanda" ng-model="vm.cadastro.abriuDemanda" ng-class="formCadastro.abriuDemanda.$invalid && formCadastro.abriuDemanda.$touched ? 'alteraFocoErro' : ''" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
-							<option value="true">Sim</option>
-							<option value="false">Não</option>
-						</select>
-					</div>
-					<div class="form-group col-sm-2">
-						<label for="status">Status</label>
-						<br>
-						<select class="form-control" name="status" id="status" ng-model="vm.cadastro.status" ng-class="formCadastro.status.$invalid && formCadastro.status.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.status | orderBy: 'nome'" ng-required="true">
-							<option disabled selected value>Selecione uma opção</option>
-						</select>
-					</div>
-				</div> <!-- Fim da linha -->
-				<div class="row"> <!-- Inicio da linha -->
-					<div class="form-group col-sm-4">
-						<label for="diagnostico">Diagnóstico</label>
-						<br>
-						<textarea class="form-control" name="diagnostico" id="diagnostico" rows="2" placeholder="Razão de ter ocorrido o problema (por que esse problema ocorreu?)" ng-model="vm.cadastro.diagnostico" ng-class="formCadastro.diagnostico.$invalid && formCadastro.diagnostico.$touched ? 'alteraFocoErro' : ''" ng-required="true"></textarea>
-					</div>
-					<div class="form-group col-sm-4">
-						<label for="resposta">Resposta</label>
-						<br>
-						<textarea class="form-control" name="resposta" id="resposta" rows="2" placeholder="Sua solução ou resposta para o aluno" ng-model="vm.cadastro.resposta" ng-class="formCadastro.resposta.$invalid && formCadastro.resposta.$touched ? 'alteraFocoErro' : ''" ng-required="true"></textarea>
-					</div>
-					<div class="form-group col-sm-4">
-						<label for="observacao">Observações</label>
-						<br>
-						<textarea class="form-control" name="observacao" id="observacao" rows="2" placeholder="Informações adicionais sobre o atendimento" ng-model="vm.cadastro.observacao" ng-class="formCadastro.observacao.$invalid && formCadastro.observacao.$touched ? 'alteraFocoErro' : ''"></textarea>
-					</div>
-				</div> <!-- Fim da linha -->
-				<br>
-				<div class="btns">
-					<button class="btn btn-success" type="submit" ng-disabled="!formCadastro.$valid"><span class="glyphicon glyphicon-send" aria-hidden="true"></span>&nbsp;&nbsp;Enviar</button>
-					<button class="btn btn-primary" type="reset" ng-click="vm.limpaCampos(formCadastro)"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span>&nbsp;&nbsp;Limpar</button>
-				</div>
-			</form> <!-- Fim do Fomulário -->
-		</div> <!-- Fim da Jumbotron -->
-	</div> <!-- Fim da Container -->
+
+	<ng-view></ng-view>
+
 </body>
 
 </html>
