@@ -4,6 +4,11 @@
 angular.module( 'helpdesk', ['ngMessages', 'ngRoute', 'ngResource'] )
   .config(function($routeProvider) {
     $routeProvider
+      .when('/login',{
+        templateUrl:"views/login.html",
+        controller:"cadastroController",
+        controllerAs:"cadastroController"
+      })
       .when('/cadastro',{
         templateUrl:"views/cadastro/cadastro.html",
         controller:"cadastroController",
@@ -14,5 +19,5 @@ angular.module( 'helpdesk', ['ngMessages', 'ngRoute', 'ngResource'] )
         controller:"cadastroController",
         controllerAs:"cadastroController"
       });
-    $routeProvider.otherwise({redirectTo: "/cadastro"});
+    $routeProvider.otherwise({redirectTo: "/login"});
   });
