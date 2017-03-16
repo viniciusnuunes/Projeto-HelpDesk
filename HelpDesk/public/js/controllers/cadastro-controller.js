@@ -5,7 +5,7 @@
   .module('helpdesk')
   .controller('cadastroController', cadastroController);
 
-  //cadastroController.$inject = ['$http', '$scope', '$routeParams'];
+  cadastroController.$inject = ['$http', '$scope', '$routeParams', 'cadastroService'];
 
   function cadastroController($http, $scope, $routeParams, cadastroService) {
 
@@ -16,6 +16,15 @@
     vm.limpaIdFreshdesk = limpaIdFreshdesk;
     vm.submitForm = submitForm;
     vm.consultar = consultar;
+    var servico = cadastroService;
+
+    $scope.cadastros = [];
+
+    cadastroService.query(function(cadastros){
+      $scope.cadastros = cadastros;
+    }, function(error){
+        console.log(error);
+    });
 
     function limpaCampos(formCadastro) {
       if(formCadastro){
@@ -36,28 +45,29 @@
     function submitForm(cadastro,formCadastro) {
       cadastroService.submitForm(cadastro)
       .success(function(cadastro) {
+        console.log("Cadastro efetuado com sucesso!");
         console.log(cadastro);
         limpaCampos(formCadastro);
       })
       .error(function(cadastro){
-        console.log(cadastro);
+        console.log("Erro ao cadastrar");
       });
     }
 
     function consultar(idAlunoBusca) {
-      cadastroService.consultar(idAlunoBusca)
+      servico.consultar(idAlunoBusca)
       .success(function(data){
-        for(var i=0; i<data.length; i++){
-          var busca = idAlunoBusca;
+        //for(var i=0; i<data.length; i++){
+          //var busca = idAlunoBusca;
           //data.forEach(function(busca, index, arr){
-            if (data[i].idAluno == busca){
-              return data[i];
-              var x = data[i];
-              console.log(x);
-              console.log(data[i]);
-            }
+            //if (data[i].idAluno == busca){
+            //  return data[i];
+              //var x = data[i];
+              //console.log(x);
+              console.log(data);
+            //}
           //})
-        }
+        //}
       })
 
 

@@ -216,54 +216,23 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
+            <tr ng-repeat="cadastro in cadastros">
+                <td>#</td>
+                <td>{{cadastro.colaborador}}</td>
+                <td>{{cadastro.entrada}}</td>
+                <td>{{cadastro.origem}}</td>
+                <td>{{cadastro.aplicacao}}</td>
+                <td>{{cadastro.device.nome}}</td>
+                <td>{{cadastro.status}}</td>
+                <td>{{cadastro.problema}}</td>
+                <td>{{cadastro.idFreshdesk}}</td>
+                <td>{{cadastro.idAluno}}</td>
+                <td>{{cadastro.data}}</td>
+                <td>{{cadastro.diagnostico}}</td>
+                <td>{{cadastro.resposta}}</td>
+                <td>{{cadastro.observacoes}}</td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-                <td>Exemplo</td>
-            </tr>
+
         </tbody>
     </table>
 </div>
