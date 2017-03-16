@@ -2,13 +2,12 @@
 // Todas as injeções de dependências DEVEM ser feitas
 // neste arquivo!
 angular.module( 'helpdesk', ['ngMessages', 'ngRoute', 'ngResource', 'menuSuperiorDirective'] )
-  .config(function($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(); // Colocar true entre parenteses para retirar a # da URL
+  .config(function($routeProvider) {
     $routeProvider
       .when('/login',{
         templateUrl:"views/login.html",
         controller:"loginController",
-        controllerAs:"loginController"
+        controllerAs:"vm"
       })
       .when('/cadastro',{
         templateUrl:"views/cadastro/cadastro.html",
