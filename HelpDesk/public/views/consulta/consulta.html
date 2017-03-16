@@ -6,7 +6,7 @@
             <small class="text-muted">HelpDesk</small>
         </h2>
         <br>
-        <form novalidate name="formConsulta" class="form-horizontal" role="form" ng-submit="vm.consultar()">
+        <form novalidate name="formConsulta" class="form-horizontal" role="form" ng-submit="vm.consultar(formConsulta.idAluno.$modelValue)">
             <div class="form-group">
                 <p class="col-sm-2 control-label"><span class="glyphicon glyphicon-search"></span> Pesquisar</p>
                 <div class="col-sm-4"></div>
