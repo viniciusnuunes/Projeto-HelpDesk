@@ -5,9 +5,9 @@
   .module('helpdesk')
   .controller('cadastroController', cadastroController);
 
-  cadastroController.$inject = ['$http', '$scope', '$routeParams', 'cadastroService'];
+  cadastroController.$inject = ['$http', '$scope', '$routeParams', 'cadastroService', 'consultaService'];
 
-  function cadastroController($http, $scope, $routeParams, cadastroService) {
+  function cadastroController($http, $scope, $routeParams, cadastroService, consultaService) {
 
     /* jshint validthis: true*/
     var vm = this;
@@ -16,11 +16,10 @@
     vm.limpaIdFreshdesk = limpaIdFreshdesk;
     vm.submitForm = submitForm;
     vm.consultar = consultar;
-    var servico = cadastroService;
 
     $scope.cadastros = [];
 
-    cadastroService.query(function(cadastros){
+    consultaService.query(function(cadastros){
       $scope.cadastros = cadastros;
     }, function(error){
         console.log(error);
@@ -55,7 +54,7 @@
     }
 
     function consultar(idAlunoBusca) {
-      servico.consultar(idAlunoBusca)
+      cadastroService.consultar(idAlunoBusca)
       .success(function(data){
         //for(var i=0; i<data.length; i++){
           //var busca = idAlunoBusca;

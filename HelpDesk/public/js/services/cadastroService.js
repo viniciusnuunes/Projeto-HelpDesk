@@ -8,27 +8,17 @@ angular
   .module('helpdesk')
   .service('cadastroService', cadastroService);
 
-cadastroService.$inject = ['$http', '$resource'];
+cadastroService.$inject = ['$http'];
 
-function cadastroService($http, $resource) {
-
-  var vm = this;
-  vm.submitForm = submitForm;
-  vm.consultar = consultar;
-
-  return $resource('/v1/cadastros/:cadastroId', null, {
-      'update' : {
-        method: 'PUT'
-      }
-  });
-
+function cadastroService($http) {
+    
   const url = "/v1/cadastros";
 
-  function submitForm(formCadastro) {
+  this.submitForm = function(formCadastro) {
     return $http.post(url, formCadastro);
   };
 
-  function consultar() {
+  this.consultar = function() {
     return $http.get(url);
   };
 

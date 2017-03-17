@@ -1,14 +1,22 @@
 /*jslint node: true */
 /*jshint esversion: 6 */
 
-(function(){
+(function() {
 'use strict';
 
-  angular
-    .module('helpdeks')
-    .service('consultaService', consultaService);
+angular
+  .module('helpdesk')
+  .service('consultaService', consultaService);
 
-    function consultaService($http){
-      const url = "/v1/"
-    }
-})
+consultaService.$inject = ['$http', '$resource'];
+
+function consultaService($http, $resource) {
+
+      return $resource('/v1/cadastros/:cadastroId', null, {
+        'update' : {
+          method: 'PUT'
+        }
+    });
+
+  }
+})();
