@@ -5,6 +5,7 @@
         <div class="row">
           <div class="form-group col-sm-12">
             <br>
+            <p class="alert-danger">{{vm.mensagem}}</p>
             <div class="input-group input-login-margin">
               <span class="input-group-addon input-lg glyphicon glyphicon-envelope icon-login-input"></span>
               <input class="form-control input-lg" name="email" id="email" type="text" placeholder="E-MAIL" ng-model="vm.login.email" ng-class="formularioLogin.email.$invalid && formularioLogin.email.$touched ? 'alteraFocoErro' : ''" ng-required="true"/>
