@@ -12,11 +12,18 @@
     var vm = this;
 
     vm.cadastros = [];
+    vm.ordenar = ordenar;
 
     consultaService.query(function(cadastros){
       vm.cadastros = cadastros;
     }, function(error){
       console.log(error);
     });
+
+    function ordenar(keyname) {
+      vm.sortKey = keyname;
+      vm.reverse = !vm.reverse;
+    }
+
   }
 })();

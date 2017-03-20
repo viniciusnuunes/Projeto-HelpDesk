@@ -38,7 +38,7 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>
+                <th ng-click="vm.ordenar('colaborador')">
                     <div class="dropdown">
                         Colaborador&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -55,7 +55,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('entrada')">
                     <div class="dropdown">
                         Entrada&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -70,7 +70,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('origem')">
                     <div class="dropdown">
                         Origem&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -82,7 +82,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('aplicacao')">
                     <div class="dropdown">
                         Aplicação&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -99,7 +99,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('device')">
                     <div class="dropdown">
                         Device&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -117,7 +117,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('status')">
                     <div class="dropdown">
                         Status&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -131,7 +131,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('problemas')">
                     <div class="dropdown">
                         Problemas&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -149,7 +149,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('idFreshdesk')">
                     <div class="dropdown">
                         ID FreshDesk
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -163,7 +163,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('idAluno')">
                     <div class="dropdown">
                         ID Aluno&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -177,7 +177,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('data')">
                     <div class="dropdown">
                         Data&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -191,7 +191,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('diagnostico')">
                     <div class="dropdown">
                         Diagnóstico&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -205,7 +205,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('resposta')">
                     <div class="dropdown">
                         Resposta&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -219,7 +219,7 @@
                         </ul>
                     </div>
                 </th>
-                <th>
+                <th ng-click="vm.ordenar('observacoes')">
                     <div class="dropdown">
                         Observações&nbsp;
                         <button class="btn btn-info btn-sm dropdown-toggle" type="button" data-toggle="dropdown">
@@ -236,7 +236,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="cadastro in vm.cadastros | filter:procurar" >
+            <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | orderBy:vm.sortKey:vm.reverse" >
                 <td>#</td>
                 <td>{{cadastro.colaborador}}</td>
                 <td>{{cadastro.entrada}}</td>
