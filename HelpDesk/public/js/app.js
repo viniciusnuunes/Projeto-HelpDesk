@@ -2,7 +2,10 @@
 // Todas as injeções de dependências DEVEM ser feitas
 // neste arquivo!
 angular.module( 'helpdesk', ['ngMessages', 'ngRoute', 'ngResource', 'menuSuperiorDirective'] )
-  .config(function($routeProvider) {
+  .config(function($routeProvider, $locationProvider, $httpProvider) {
+
+    $httpProvider.interceptors.push('tokenInterceptor');
+
     $routeProvider
       .when('/login',{
         templateUrl:"views/login.html",

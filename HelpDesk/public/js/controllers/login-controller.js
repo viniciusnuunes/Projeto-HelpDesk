@@ -1,35 +1,58 @@
-(function () {
-'use strict';
+(function() {
+    'use strict';
 
-angular
-  .module('helpdesk')
-  .controller('loginController', loginController);
+    angular
+        .module('helpdesk')
+        .controller('loginController', loginController);
 
-loginController.$inject = ['$scope'];
+    loginController.$inject = ['$scope', '$http', '$location'];
 
-function loginController($scope) {
+    function loginController($scope, $http, $location) {
 
-/* jshint validthis: true*/
-var vm = this;
+        /* jshint validthis: true*/
+        var vm = this;
 
-vm.limpaCampos = limpaCampos;
-vm.submitForm = submitForm;
+        vm.usuario = {};
+        vm.mensagem = '';
 
-function limpaCampos() {
-  this.login = {};
-  $scope.formularioLogin.$setUntouched();
-  $scope.formularioLogin.$setPristine();
-  console.log("Limpando campos do formulário!");
-}
+        vm.limpaCampos = limpaCampos;
+        vm.submitForm = submitForm;
+        vm.autenticar = autenticar;
 
-function submitForm() {
-  if (!formularioLogin.$invalid) {
-    console.log('Formulario OK');
-    this.limpaCampos();
-  } else {
-    console.log('erro!');
-  }
-}
 
-}
+        function autenticar() {
+            var usuario = vm.usuario;
+
+            $http.post('/autenticar', {
+                    login: vm.login.email,
+                    senha: vm.login.senha
+                })
+                .then(function() {
+                    $location.path('/');
+                }, function(error) {
+                    console.log(error);
+                    vm.usuario = {};
+                    vm.mensagem = 'Login ou senha inválidos';
+                });
+        }
+
+
+        function limpaCampos() {
+            this.login = {};
+            $scope.formularioLogin.$setUntouched();
+            $scope.formularioLogin.$setPristine();
+            console.log("Limpando campos do formulário!");
+        }
+
+
+        function submitForm() {
+            if (!formularioLogin.$invalid) {
+                console.log('Formulario OK');
+                this.limpaCampos();
+            } else {
+                console.log('erro!');
+            }
+        }
+
+    }
 })();
