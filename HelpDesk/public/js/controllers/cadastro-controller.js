@@ -1,29 +1,19 @@
-(function () {
+(function() {
   'use strict';
 
   angular
-  .module('helpdesk')
-  .controller('cadastroController', cadastroController);
+    .module('helpdesk')
+    .controller('cadastroController', cadastroController);
 
-  cadastroController.$inject = ['$http', '$scope', '$routeParams', 'cadastroService', 'consultaService'];
+  cadastroController.$inject = ['$http', '$scope', '$routeParams', 'cadastroService'];
 
-  function cadastroController($http, $scope, $routeParams, cadastroService, consultaService) {
-
+  function cadastroController($http, $scope, $routeParams, cadastroService) {
     /* jshint validthis: true*/
     var vm = this;
 
     vm.limpaCampos = limpaCampos;
     vm.limpaIdFreshdesk = limpaIdFreshdesk;
     vm.submitForm = submitForm;
-    vm.consultar = consultar;
-
-    $scope.cadastros = [];
-
-    consultaService.query(function(cadastros){
-      $scope.cadastros = cadastros;
-    }, function(error){
-      console.log(error);
-    });
 
     function limpaCampos(formCadastro) {
       if(formCadastro){
@@ -53,30 +43,6 @@
       });
     }
 
-    function consultar(data) {
-      cadastroService.consultar(data)
-      .success(function(data){
-        //  for(var i=0; i<data.length; i++){
-        //  var busca = data;
-        //data.forEach(function(busca, index, arr){
-        //if (data[i].object.idAluno == busca){
-        //return data.object.idAluno;
-        //var x = data.object.idAluno;
-
-        //  console.log(consulta.idAluno);
-        //}
-        //  })
-        //};
-
-        //  console.log(x);
-        //})
-        console.log(data);
-
-      })
-      .error(function(data){
-        console.log(data);
-      });
-    }
     // - início - CONTEÚDO DOS OPTIONS DAS SELECTS
     vm.aplicacao = [
       { "valor": "AREA_RESTRITA", "nome": "AREA RESTRITA" },

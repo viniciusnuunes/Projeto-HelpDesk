@@ -19,7 +19,7 @@ angular.module( 'helpdesk', ['ngMessages', 'ngRoute', 'ngResource', 'menuSuperio
       })
       .when('/consulta',{
         templateUrl:"views/consulta/consulta.html",
-        controller:"cadastroController",
+        controller:"consultaController",
         controllerAs:"vm"
       });
     $routeProvider.otherwise({redirectTo: "/cadastro"});

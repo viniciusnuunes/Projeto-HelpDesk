@@ -1,9 +1,22 @@
-(function(){
+(function() {
   'use strict';
 
   angular
     .module('helpdesk')
     .controller('consultaController', consultaController);
 
-    function consultaController($http, $scope)
-})
+  consultaController.$inject = ['$http', '$scope', '$routeParams', 'consultaService'];
+
+  function consultaController($http, $scope, $routeParams, consultaService) {
+    /* jshint validthis: true*/
+    var vm = this;
+
+    vm.cadastros = [];
+
+    consultaService.query(function(cadastros){
+      vm.cadastros = cadastros;
+    }, function(error){
+      console.log(error);
+    });
+  }
+})();
