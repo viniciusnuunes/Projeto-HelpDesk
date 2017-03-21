@@ -27,7 +27,10 @@
     }
 
     function filtrarConsulta(filtro) {
-      vm.procurar = filtro;
+      vm.filtrarColuna = filtro;
+      if(vm.filtrarColuna===null) {
+        vm.filtrarColuna="";
+      }
     }
 
   }
