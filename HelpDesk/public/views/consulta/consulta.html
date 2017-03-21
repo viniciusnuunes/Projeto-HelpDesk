@@ -45,13 +45,9 @@
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Adriano</a></li>
-                            <li><a href="#">Iana</a></li>
-                            <li><a href="#">Julia</a></li>
-                            <li><a href="#">Paula</a></li>
-                            <li><a href="#">Pedro</a></li>
-                            <li><a href="#">Vinicius</a></li>
-                            <li><a href="#">Ygor</a></li>
+                            <li ng-repeat="cadastro in vm.cadastros | unique:'colaborador'">
+                                <a ng-click="procurar = cadastro.colaborador">{{cadastro.colaborador}}</a>
+                            </li>
                         </ul>
                     </div>
                 </th>
@@ -236,7 +232,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | orderBy:vm.sortKey:vm.reverse" >
+            <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | orderBy:vm.sortKey:vm.reverse">
                 <td>#</td>
                 <td>{{cadastro.colaborador}}</td>
                 <td>{{cadastro.entrada}}</td>

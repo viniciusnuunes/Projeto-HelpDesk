@@ -13,6 +13,7 @@
 
     vm.cadastros = [];
     vm.ordenar = ordenar;
+    vm.filtrarConsulta = filtrarConsulta;
 
     consultaService.query(function(cadastros){
       vm.cadastros = cadastros;
@@ -23,6 +24,10 @@
     function ordenar(keyname) {
       vm.sortKey = keyname;
       vm.reverse = !vm.reverse;
+    }
+
+    function filtrarConsulta(filtro) {
+      vm.procurar = filtro;
     }
 
   }
