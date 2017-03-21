@@ -12,6 +12,11 @@ angular.module( 'helpdesk', ['ngMessages', 'ngRoute', 'ngResource', 'menuSuperio
         controller:"loginController",
         controllerAs:"vm"
       })
+      .when('/logout',{
+        templateUrl:"views/logout.html",
+        controller:"logoutController",
+        controllerAs:"vm"
+      })
       .when('/cadastro',{
         templateUrl:"views/cadastro/cadastro.html",
         controller:"cadastroController",
