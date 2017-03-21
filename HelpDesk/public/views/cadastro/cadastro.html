@@ -39,7 +39,7 @@
         <div class="form-group col-sm-2">
           <label for="entrada">Entrada</label>
           <br>
-          <select class="form-control" name="entrada" id="entrada" ng-model="vm.cadastro.entrada" ng-class="formCadastro.entrada.$invalid && formCadastro.entrada.$touched ? 'alteraFocoErro' : ''" ng-options="obj.valor as obj.nome for obj in vm.entrada | orderBy: 'nome'" ng-change="vm.limpaIdFreshdesk(formCadastro)" ng-required="true">
+          <select class="form-control" name="entrada" id="entrada" ng-model="vm.cadastro.entrada" ng-class="formCadastro.entrada.$invalid && formCadastro.entrada.$touched ? 'alteraFocoErro' : ''" required ng-controller="entradaController" ng-options="entrada.valor as (entrada.nome) for entrada in entradas" ng-change="vm.limpaIdFreshdesk(formCadastro)" ng-required="true">
             <option disabled selected value>Selecione uma opção</option>
           </select>
         </div>

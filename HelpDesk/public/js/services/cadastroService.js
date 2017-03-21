@@ -11,7 +11,7 @@ angular
 cadastroService.$inject = ['$http'];
 
 function cadastroService($http) {
-    
+
   const url = "/v1/cadastros";
 
   this.submitForm = function(formCadastro) {

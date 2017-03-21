@@ -73,14 +73,6 @@
     vm.devices.Nao_informada = [ { "nome": "Não informado" }, { "nome": "Outro" } ];
     vm.devices.Outra = [ { "nome": "Não informado" }, { "nome": "Outro" } ];
 
-    vm.entrada = [
-      { "valor": "Demanda", "nome": "Demanda" },
-      { "valor": "E-Mail", "nome": "E-Mail" },
-      { "valor": "Freshdesk", "nome": "Freshdesk" },
-      { "valor": "Spark", "nome": "Spark" },
-      { "valor": "Telefone", "nome": "Telefone" }
-    ];
-
     vm.origem = [
       { "valor": "Aluno", "nome": "Aluno" },
       { "valor": "MEDGRUPO", "nome": "MEDGRUPO" }
