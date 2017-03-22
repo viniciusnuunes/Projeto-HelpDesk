@@ -46,10 +46,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'colaborador'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.colaborador)">{{cadastro.colaborador}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.colaborador,'colaborador')">{{cadastro.colaborador}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'colaborador')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -62,10 +62,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'entrada'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.entrada)">{{cadastro.entrada}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.entrada,'entrada')">{{cadastro.entrada}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'entrada')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -78,10 +78,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'origem'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.origem)">{{cadastro.origem}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.origem,'origem')">{{cadastro.origem}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'origem')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -94,10 +94,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'aplicacao'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.aplicacao)">{{cadastro.aplicacao}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.aplicacao,'aplicacao')">{{cadastro.aplicacao}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'aplicacao')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -110,10 +110,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'device'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.device)">{{cadastro.device.nome}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.device.nome,'device')">{{cadastro.device.nome}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'device')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -126,10 +126,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'status'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.status)">{{cadastro.status}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.status,'status')">{{cadastro.status}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'status')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -142,10 +142,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'problema'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.problema)">{{cadastro.problema}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.problema,'problema')">{{cadastro.problema}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'problema')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -158,10 +158,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'idFreshdesk'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.idFreshdesk)">{{cadastro.idFreshdesk}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.idFreshdesk,'idFreshdesk')">{{cadastro.idFreshdesk}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'idFreshdesk')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -174,10 +174,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'idAluno'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.idAluno)">{{cadastro.idAluno}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.idAluno,'idAluno')">{{cadastro.idAluno}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'idAluno')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -190,10 +190,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'data'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.data)">{{cadastro.data | date:'dd/MM/yyyy'}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.data,'data')">{{cadastro.data | date:'dd/MM/yyyy'}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'data')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -206,10 +206,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'diagnostico'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.diagnostico)">{{cadastro.diagnostico}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.diagnostico,'diagnostico')">{{cadastro.diagnostico}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'diagnostico')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -222,10 +222,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'resposta'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.resposta)">{{cadastro.resposta}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.resposta,'resposta')">{{cadastro.resposta}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'resposta')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -238,10 +238,10 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li ng-repeat="cadastro in vm.cadastros | unique:'observacoes'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.observacoes)">{{cadastro.observacoes}}</a>
+                                <a ng-click="vm.filtrarConsulta(cadastro.observacoes,'observacoes')">{{cadastro.observacoes}}</a>
                             </li>
                             <li>
-                                <a ng-click="vm.filtrarConsulta(null)">Todos</a>
+                                <a ng-click="vm.filtrarConsulta(null,'observacoes')">Todos</a>
                             </li>
                         </ul>
                     </div>
@@ -249,7 +249,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | filter:vm.filtrarColuna | orderBy:vm.sortKey:vm.reverse">
+            <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | filter:vm.filtrarColaborador | filter:vm.filtrarEntrada | filter:vm.filtrarOrigem | filter:vm.filtrarAplicacao | filter:vm.filtrarDevice | filter:vm.filtrarStatus | filter:vm.filtrarProblema | filter:vm.filtrarIdFreshdesk | filter:vm.filtrarIdAluno | filter:vm.filtrarData | filter:vm.filtrarDiagnostico | filter:vm.filtrarResposta | filter:vm.filtrarObservacoes | orderBy:vm.sortKey:vm.reverse">
                 <td>#</td>
                 <td>{{cadastro.colaborador}}</td>
                 <td>{{cadastro.entrada}}</td>
