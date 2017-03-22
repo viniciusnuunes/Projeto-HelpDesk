@@ -5,15 +5,25 @@
     .module('helpdesk')
     .controller('cadastroController', cadastroController);
 
-  cadastroController.$inject = ['$http', '$scope', '$routeParams', 'cadastroService'];
+  cadastroController.$inject = ['$http', '$scope', 'cadastroService', '$timeout'];
 
-  function cadastroController($http, $scope, $routeParams, cadastroService) {
+  function cadastroController($http, $scope, cadastroService, $timeout) {
     /* jshint validthis: true*/
     var vm = this;
 
     vm.limpaCampos = limpaCampos;
     vm.limpaIdFreshdesk = limpaIdFreshdesk;
     vm.submitForm = submitForm;
+    vm.confirmaCadastro = confirmaCadastro;
+    vm.mensagem = '';
+    vm.alerta = true;
+
+    function confirmaCadastro(){
+      vm.alerta = false;
+      $timeout(function () {
+        vm.mensagem = '';
+      }, 3000);
+    }
 
     function limpaCampos(formCadastro) {
       if(formCadastro){
@@ -36,7 +46,9 @@
       .success(function(cadastro) {
         console.log("Cadastro efetuado com sucesso!");
         console.log(cadastro);
+        vm.mensagem = 'Cadastro efetuado com sucesso!'
         limpaCampos(formCadastro);
+        confirmaCadastro();
       })
       .error(function(cadastro){
         console.log("Erro ao cadastrar");
