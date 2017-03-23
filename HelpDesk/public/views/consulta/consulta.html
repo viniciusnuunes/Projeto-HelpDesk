@@ -1,283 +1,275 @@
 <menu-superior></menu-superior>
 <div class="container">
-    <div class="jumbotron">
-        <h2>
-            Relatórios
-            <small class="text-muted">HelpDesk</small>
-        </h2>
-        <br>
-        <form novalidate class="form-horizontal">
-            <div class="form-group">
-                <p class="col-sm-2 control-label"><span class="glyphicon glyphicon-search"></span> Pesquisar</p>
-                <div class="col-sm-4"></div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="procurar">Procurar:</label>
-                <div class="col-sm-4">
-                    <input type="text" id="procurar" name="procurar" ng-model="procurar" class="form-control" ng-minlength="4" ng-maxlength="7" ng-required="true" placeholder="Procurar...">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="dataDe">De:</label>
-                <div class="col-sm-4">
-                    <input name="data" id="dataDe" ng-model="vm.cadastro.dataDe" class="form-control" type="date" ng-required="true">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label" for="dataAte">Até:</label>
-                <div class="col-sm-4">
-                    <input name="data" id="dataAte" ng-model="vm.cadastro.dataAte" class="form-control" type="date">
-                </div>
-            </div>
-        </form>
-    </div>
-
+  <div class="jumbotron">
+    <h2>
+      <span class="glyphicon glyphicons-search"></span>
+      Relatórios
+      <small class="text-muted">HelpDesk</small>
+    </h2>
+    <br>
+    <form novalidate class="form-horizontal">
+      <div class="form-group">
+        <label class="col-sm-1 control-label" for="procurar">Procurar:</label>
+        <div class="col-sm-3">
+          <input type="text" id="procurar" name="procurar" ng-model="procurar" class="form-control" ng-minlength="4" ng-maxlength="7" ng-required="true" placeholder="Procurar...">
+        </div>
+        <label class="col-sm-1 control-label" for="dataDe">De:</label>
+        <div class="col-sm-3">
+          <input name="data" id="dataDe" ng-model="vm.cadastro.dataDe" class="form-control" type="date" ng-required="true">
+        </div>
+        <label class="col-sm-1 control-label" for="dataAte">Até:</label>
+        <div class="col-sm-3">
+          <input name="data" id="dataAte" ng-model="vm.cadastro.dataAte" class="form-control" type="date">
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 <div class="table-responsive">
-    <table class="table table-bordered table-striped table-hover table-condensed">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>
-                    <div class="btn-group" style="width:117px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('colaborador')">Colaborador</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarColaborador=='' || vm.filtrarColaborador==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'colaborador'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.colaborador,'colaborador')">{{cadastro.colaborador}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'colaborador')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:91px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('entrada')">Entrada</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarEntrada=='' || vm.filtrarEntrada==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'entrada'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.entrada,'entrada')">{{cadastro.entrada}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'entrada')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:89px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('origem')">Origem</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarOrigem=='' || vm.filtrarOrigem==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'origem'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.origem,'origem')">{{cadastro.origem}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'origem')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:101px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('aplicacao')">Aplicação</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarAplicacao=='' || vm.filtrarAplicacao==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'aplicacao'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.aplicacao,'aplicacao')">{{cadastro.aplicacao}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'aplicacao')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:85px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('device')">Device</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarDevice=='' || vm.filtrarDevice==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'device'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.device.nome,'device')">{{cadastro.device.nome}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'device')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:83px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('status')">Status</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarStatus=='' || vm.filtrarStatus==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'status'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.status,'status')">{{cadastro.status}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'status')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:102px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('problema')">Problema</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarProblema=='' || vm.filtrarProblema==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'problema'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.problema,'problema')">{{cadastro.problema}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'problema')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:124px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('idFreshdesk')">ID FreshDesk</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarIdFreshdesk=='' || vm.filtrarIdFreshdesk==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'idFreshdesk'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.idFreshdesk,'idFreshdesk')">{{cadastro.idFreshdesk}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'idFreshdesk')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:94px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('idAluno')">ID Aluno</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarIdAluno=='' || vm.filtrarIdAluno==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'idAluno'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.idAluno,'idAluno')">{{cadastro.idAluno}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'idAluno')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:74px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('data')">Data</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarData=='' || vm.filtrarData==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'data'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.data,'data')">{{cadastro.data | date:'dd/MM/yyyy'}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'data')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:114px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('diagnostico')">Diagnóstico</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarDiagnostico=='' || vm.filtrarDiagnostico==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'diagnostico'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.diagnostico,'diagnostico')">{{cadastro.diagnostico}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'diagnostico')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:102px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('resposta')">Resposta</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarResposta=='' || vm.filtrarResposta==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'resposta'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.resposta,'resposta')">{{cadastro.resposta}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'resposta')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-                <th>
-                    <div class="btn-group" style="width:121px">
-                        <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('observacoes')">Observações</button>
-                        <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarObservacoes=='' || vm.filtrarObservacoes==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li ng-repeat="cadastro in vm.cadastros | unique:'observacoes'">
-                                <a ng-click="vm.filtrarConsulta(cadastro.observacoes,'observacoes')">{{cadastro.observacoes}}</a>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li>
-                                <a ng-click="vm.filtrarConsulta(null,'observacoes')">Todos</a>
-                            </li>
-                        </ul>
-                    </div>
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | filter:vm.filtrarColaborador | filter:vm.filtrarEntrada | filter:vm.filtrarOrigem | filter:vm.filtrarAplicacao | filter:vm.filtrarDevice | filter:vm.filtrarStatus | filter:vm.filtrarProblema | filter:vm.filtrarIdFreshdesk | filter:vm.filtrarIdAluno | filter:vm.filtrarData | filter:vm.filtrarDiagnostico | filter:vm.filtrarResposta | filter:vm.filtrarObservacoes | orderBy:vm.sortKey:vm.reverse">
-                <td>#</td>
-                <td>{{cadastro.colaborador}}</td>
-                <td>{{cadastro.entrada}}</td>
-                <td>{{cadastro.origem}}</td>
-                <td>{{cadastro.aplicacao}}</td>
-                <td>{{cadastro.device.nome}}</td>
-                <td>{{cadastro.status}}</td>
-                <td>{{cadastro.problema}}</td>
-                <td>{{cadastro.idFreshdesk}}</td>
-                <td>{{cadastro.idAluno}}</td>
-                <td>{{cadastro.data | date:'dd/MM/yyyy'}}</td>
-                <td>{{cadastro.diagnostico}}</td>
-                <td>{{cadastro.resposta}}</td>
-                <td>{{cadastro.observacoes}}</td>
-            </tr>
-        </tbody>
-    </table>
+  <table class="table table-bordered table-striped table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>
+          <div class="btn-group" style="width:117px">
+            <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('colaborador')">Colaborador</button>
+            <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarColaborador=='' || vm.filtrarColaborador==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="cadastro in vm.cadastros | unique:'colaborador'">
+                <a ng-click="vm.filtrarConsulta(cadastro.colaborador,'colaborador')">{{cadastro.colaborador}}</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a ng-click="vm.filtrarConsulta(null,'colaborador')">Todos</a>
+              </li>
+            </ul>
+          </div>
+        </th>
+        <th>
+          <div class="btn-group" style="width:91px">
+            <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('entrada')">Entrada</button>
+            <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarEntrada=='' || vm.filtrarEntrada==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="cadastro in vm.cadastros | unique:'entrada'">
+                <a ng-click="vm.filtrarConsulta(cadastro.entrada,'entrada')">{{cadastro.entrada}}</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a ng-click="vm.filtrarConsulta(null,'entrada')">Todos</a>
+              </li>
+            </ul>
+          </div>
+        </th>
+        <th>
+          <div class="btn-group" style="width:89px">
+            <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('origem')">Origem</button>
+            <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarOrigem=='' || vm.filtrarOrigem==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="cadastro in vm.cadastros | unique:'origem'">
+                <a ng-click="vm.filtrarConsulta(cadastro.origem,'origem')">{{cadastro.origem}}</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a ng-click="vm.filtrarConsulta(null,'origem')">Todos</a>
+              </li>
+            </ul>
+          </div>
+        </th>
+        <th>
+          <div class="btn-group" style="width:101px">
+            <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('aplicacao')">Aplicação</button>
+            <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarAplicacao=='' || vm.filtrarAplicacao==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="cadastro in vm.cadastros | unique:'aplicacao'">
+                <a ng-click="vm.filtrarConsulta(cadastro.aplicacao,'aplicacao')">{{cadastro.aplicacao}}</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a ng-click="vm.filtrarConsulta(null,'aplicacao')">Todos</a>
+              </li>
+            </ul>
+          </div>
+        </th>
+        <th>
+          <div class="btn-group" style="width:85px">
+            <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('device')">Device</button>
+            <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarDevice=='' || vm.filtrarDevice==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="cadastro in vm.cadastros | unique:'device'">
+                <a ng-click="vm.filtrarConsulta(cadastro.device.nome,'device')">{{cadastro.device.nome}}</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a ng-click="vm.filtrarConsulta(null,'device')">Todos</a>
+              </li>
+            </ul>
+          </div>
+        </th>
+        <th>
+          <div class="btn-group" style="width:83px">
+            <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('status')">Status</button>
+            <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarStatus=='' || vm.filtrarStatus==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="cadastro in vm.cadastros | unique:'status'">
+                <a ng-click="vm.filtrarConsulta(cadastro.status,'status')">{{cadastro.status}}</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a ng-click="vm.filtrarConsulta(null,'status')">Todos</a>
+              </li>
+            </ul>
+          </div>
+        </th>
+        <th>
+          <div class="btn-group" style="width:102px">
+            <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('problema')">Problema</button>
+            <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarProblema=='' || vm.filtrarProblema==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="cadastro in vm.cadastros | unique:'problema'">
+                <a ng-click="vm.filtrarConsulta(cadastro.problema,'problema')">{{cadastro.problema}}</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a ng-click="vm.filtrarConsulta(null,'problema')">Todos</a>
+              </li>
+            </ul>
+          </div>
+        </th>
+        <th>
+          <div class="btn-group" style="width:124px">
+            <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('idFreshdesk')">ID FreshDesk</button>
+            <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarIdFreshdesk=='' || vm.filtrarIdFreshdesk==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li ng-repeat="cadastro in vm.cadastros | unique:'idFreshdesk'">
+                <a ng-click="vm.filtrarConsulta(cadastro.idFreshdesk,'idFreshdesk')">{{cadastro.idFreshdesk}}</a>
+              </li>
+              <li role="separator" class="divider"></li>
+              <li>
+                <a ng-click="vm.filtrarConsulta(null,'idFreshdesk')">Todos</a>
+              </li>
+            </ul>
+          </div>
+        </th>
+        <th>
+            <div class="btn-group" style="width:94px">
+                <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('idAluno')">ID Aluno</button>
+                <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarIdAluno=='' || vm.filtrarIdAluno==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="cadastro in vm.cadastros | unique:'idAluno'">
+                        <a ng-click="vm.filtrarConsulta(cadastro.idAluno,'idAluno')">{{cadastro.idAluno}}</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a ng-click="vm.filtrarConsulta(null,'idAluno')">Todos</a>
+                    </li>
+                </ul>
+            </div>
+        </th>
+        <th>
+            <div class="btn-group" style="width:74px">
+                <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('data')">Data</button>
+                <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarData=='' || vm.filtrarData==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="cadastro in vm.cadastros | unique:'data'">
+                        <a ng-click="vm.filtrarConsulta(cadastro.data,'data')">{{cadastro.data | date:'dd/MM/yyyy'}}</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a ng-click="vm.filtrarConsulta(null,'data')">Todos</a>
+                    </li>
+                </ul>
+            </div>
+        </th>
+        <th>
+            <div class="btn-group" style="width:114px">
+                <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('diagnostico')">Diagnóstico</button>
+                <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarDiagnostico=='' || vm.filtrarDiagnostico==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="cadastro in vm.cadastros | unique:'diagnostico'">
+                        <a ng-click="vm.filtrarConsulta(cadastro.diagnostico,'diagnostico')">{{cadastro.diagnostico}}</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a ng-click="vm.filtrarConsulta(null,'diagnostico')">Todos</a>
+                    </li>
+                </ul>
+            </div>
+        </th>
+        <th>
+            <div class="btn-group" style="width:102px">
+                <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('resposta')">Resposta</button>
+                <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarResposta=='' || vm.filtrarResposta==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="cadastro in vm.cadastros | unique:'resposta'">
+                        <a ng-click="vm.filtrarConsulta(cadastro.resposta,'resposta')">{{cadastro.resposta}}</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a ng-click="vm.filtrarConsulta(null,'resposta')">Todos</a>
+                    </li>
+                </ul>
+            </div>
+        </th>
+        <th>
+            <div class="btn-group" style="width:121px">
+                <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('observacoes')">Observações</button>
+                <button class="btn btn-info btn-sm dropdown-toggle" ng-class="vm.filtrarObservacoes=='' || vm.filtrarObservacoes==null ? '' : 'btn-warning'" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="cadastro in vm.cadastros | unique:'observacoes'">
+                        <a ng-click="vm.filtrarConsulta(cadastro.observacoes,'observacoes')">{{cadastro.observacoes}}</a>
+                    </li>
+                    <li role="separator" class="divider"></li>
+                    <li>
+                        <a ng-click="vm.filtrarConsulta(null,'observacoes')">Todos</a>
+                    </li>
+                </ul>
+            </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | filter:vm.filtrarColaborador | filter:vm.filtrarEntrada | filter:vm.filtrarOrigem | filter:vm.filtrarAplicacao | filter:vm.filtrarDevice | filter:vm.filtrarStatus | filter:vm.filtrarProblema | filter:vm.filtrarIdFreshdesk | filter:vm.filtrarIdAluno | filter:vm.filtrarData | filter:vm.filtrarDiagnostico | filter:vm.filtrarResposta | filter:vm.filtrarObservacoes | orderBy:vm.sortKey:vm.reverse">
+        <td>#</td>
+        <td>{{cadastro.colaborador}}</td>
+        <td>{{cadastro.entrada}}</td>
+        <td>{{cadastro.origem}}</td>
+        <td>{{cadastro.aplicacao}}</td>
+        <td>{{cadastro.device.nome}}</td>
+        <td>{{cadastro.status}}</td>
+        <td>{{cadastro.problema}}</td>
+        <td>{{cadastro.idFreshdesk}}</td>
+        <td>{{cadastro.idAluno}}</td>
+        <td>{{cadastro.data | date:'dd/MM/yyyy'}}</td>
+        <td>{{cadastro.diagnostico}}</td>
+        <td>{{cadastro.resposta}}</td>
+        <td>{{cadastro.observacoes}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
