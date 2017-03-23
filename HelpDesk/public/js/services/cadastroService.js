@@ -12,14 +12,14 @@ cadastroService.$inject = ['$http'];
 
 function cadastroService($http) {
 
-  const url = "/v1/cadastros";
+  const rota = "/v1/cadastros";
 
-  this.submitForm = function(formCadastro) {
-    return $http.post(url, formCadastro);
+  this.cadastrar = function(formCadastro) {
+    return $http.post(rota, formCadastro);
   };
 
   this.consultar = function() {
-    return $http.get(url);
+    return $http.get(rota);
   };
 
 }

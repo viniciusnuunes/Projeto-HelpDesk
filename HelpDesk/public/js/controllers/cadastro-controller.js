@@ -13,7 +13,7 @@
 
     vm.limpaCampos = limpaCampos;
     vm.limpaIdFreshdesk = limpaIdFreshdesk;
-    vm.submitForm = submitForm;
+    vm.cadastrar = cadastrar;
     vm.confirmaCadastro = confirmaCadastro;
     vm.mensagem = '';
     vm.alerta = true;
@@ -41,8 +41,8 @@
       }
     }
 
-    function submitForm(cadastro,formCadastro) {
-      cadastroService.submitForm(cadastro)
+    function cadastrar(cadastro,formCadastro) {
+      cadastroService.cadastrar(cadastro)
       .success(function(cadastro) {
         console.log("Cadastro efetuado com sucesso!");
         console.log(cadastro);
