@@ -5,9 +5,9 @@
     .module('helpdesk')
     .controller('consultaController', consultaController);
 
-  consultaController.$inject = ['$http', '$scope', '$routeParams', 'consultaService'];
+  consultaController.$inject = ['$http', '$scope', 'consultaService'];
 
-  function consultaController($http, $scope, $routeParams, consultaService) {
+  function consultaController($http, $scope, consultaService) {
     /* jshint validthis: true*/
     var vm = this;
 
