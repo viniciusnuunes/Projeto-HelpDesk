@@ -1,8 +1,15 @@
-var app = angular.module('menuSuperiorDirective', []);
+(function() {
+  'use strict';
 
-app.directive('menuSuperior', function() {
-  return {
-      restrict: 'E',
-      templateUrl: '/js/directives/menu-superior/menu-superior.html'
-  };
-});
+    angular
+      .module('menuSuperiorDirective', [])
+      .directive('menuSuperior', menuSuperior);
+
+      function menuSuperior() {
+
+        return {
+          restrict: 'E',
+          templateUrl: '/js/directives/menu-superior/menu-superior.html'
+        };
+  }
+})();
