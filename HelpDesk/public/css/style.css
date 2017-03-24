@@ -18,7 +18,8 @@ textarea {
   font-size: 1em;
 }
 .jumbotron {
-  box-shadow: 1px 1px 10px 1px grey;
+  box-shadow: 1px 1px 4px 1px #aaa;
+  background-color: #f3f3f3;
 }
 h2 {
   font-family: Impact;
@@ -91,5 +92,4 @@ input[type=number] {
   position: relative;
   top: 2px;
 }
-
 /* Tabelas da tela de consulta */

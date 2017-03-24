@@ -1,4 +1,4 @@
-angular.module( 'helpdesk', ['ngMessages', 'ngRoute', 'ngResource', 'menuSuperiorDirective', 'angularUtils.directives.dirPagination'] )
+angular.module( 'helpdesk', ['ngMaterial', 'ngMessages', 'ngRoute', 'ngResource', 'menuSuperiorDirective', 'angularUtils.directives.dirPagination'] )
   .config(function($routeProvider, $locationProvider, $httpProvider) {
 
     $httpProvider.interceptors.push('tokenInterceptor');
