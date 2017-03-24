@@ -11,15 +11,15 @@
       <div class="form-group">
         <label class="col-sm-1 control-label" for="procurar">Procurar:</label>
         <div class="col-sm-3">
-          <input type="text" id="procurar" name="procurar" ng-model="procurar" class="form-control" ng-minlength="4" ng-maxlength="7" ng-required="true" placeholder="Procurar...">
+          <input type="text" id="procurar" name="procurar" ng-model="procurar" class="form-control" ng-minlength="4" ng-maxlength="7" placeholder="Procurar...">
         </div>
         <label class="col-sm-1 control-label" for="dataDe">De:</label>
         <div class="col-sm-3">
-          <input name="data" id="dataDe" ng-model="vm.cadastro.dataDe" class="form-control" type="date" ng-required="true">
+          <input name="data" id="dataDe" ng-model="dataDe" class="form-control" type="date">
         </div>
         <label class="col-sm-1 control-label" for="dataAte">Até:</label>
         <div class="col-sm-3">
-          <input name="data" id="dataAte" ng-model="vm.cadastro.dataAte" class="form-control" type="date">
+          <input name="data" id="dataAte" ng-model="dataAte" class="form-control" type="date">
         </div>
       </div>
     </form>
@@ -254,7 +254,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | filter:vm.filtrarColaborador | filter:vm.filtrarEntrada | filter:vm.filtrarOrigem | filter:vm.filtrarAplicacao | filter:vm.filtrarDevice | filter:vm.filtrarStatus | filter:vm.filtrarProblema | filter:vm.filtrarIdFreshdesk | filter:vm.filtrarIdAluno | filter:vm.filtrarData | filter:vm.filtrarDiagnostico | filter:vm.filtrarResposta | filter:vm.filtrarObservacoes | orderBy:vm.sortKey:vm.reverse">
+      <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | filter:vm.filtrarColaborador | filter:vm.filtrarEntrada | filter:vm.filtrarOrigem | filter:vm.filtrarAplicacao | filter:vm.filtrarDevice | filter:vm.filtrarStatus | filter:vm.filtrarProblema | filter:vm.filtrarIdFreshdesk | filter:vm.filtrarIdAluno | filter:vm.filtrarData | filter:vm.filtrarDiagnostico | filter:vm.filtrarResposta | filter:vm.filtrarObservacoes | dateFilter:dataDe:dataAte | orderBy:vm.sortKey:vm.reverse">
         <td>#</td>
         <td>{{cadastro.colaborador}}</td>
         <td>{{cadastro.entrada}}</td>
