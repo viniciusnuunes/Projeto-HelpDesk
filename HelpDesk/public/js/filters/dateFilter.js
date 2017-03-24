@@ -1,9 +1,6 @@
 angular.module('helpdesk').filter("dateFilter", function($filter) {
 	return function( items, fromDate, toDate ) {
 		var filtered = [];
-		//here you will have your desired input
-		console.log(fromDate, toDate);
-
 		var from_date = "";
 		var to_date = "";
 
