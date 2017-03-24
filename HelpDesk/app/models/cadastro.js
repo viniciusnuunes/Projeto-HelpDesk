@@ -7,6 +7,7 @@ colaborador : {
 },
 data : {
   type:Date,
+  default: new Date()
 },
 idAluno : {
   type:Number,
