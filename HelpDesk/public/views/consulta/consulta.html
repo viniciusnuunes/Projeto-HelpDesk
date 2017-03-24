@@ -10,16 +10,14 @@
     <form novalidate class="form-horizontal">
       <div class="form-group">
         <label class="col-sm-1 control-label" for="procurar">Procurar:</label>
-        <div class="col-sm-3">
+        <div class="col-sm-5">
           <input type="text" id="procurar" name="procurar" ng-model="procurar" class="form-control" placeholder="Procurar...">
         </div>
-        <label class="col-sm-1 control-label" for="dataDe">De:</label>
         <div class="col-sm-3">
-          <input name="data" id="dataDe" ng-model="dataDe" class="form-control" type="date">
+          <md-datepicker class="datepicker" ng-model="dataDe" md-placeholder="Data inicial"></md-datepicker>
         </div>
-        <label class="col-sm-1 control-label" for="dataAte">Até:</label>
         <div class="col-sm-3">
-          <input name="data" id="dataAte" ng-model="dataAte" class="form-control" type="date">
+          <md-datepicker ng-model="dataAte" md-placeholder="Data final"></md-datepicker>
         </div>
       </div>
     </form>
