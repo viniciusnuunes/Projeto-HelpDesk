@@ -17,6 +17,7 @@
     vm.confirmaCadastro = confirmaCadastro;
     vm.mensagem = '';
     vm.alerta = true;
+    vm.colaborador = "Adriano";
 
     function confirmaCadastro(){
       vm.alerta = false;
