@@ -29,7 +29,6 @@
   <table class="table table-bordered table-striped table-hover table-condensed">
     <thead>
       <tr>
-        <th>#</th>
         <th>
           <div class="btn-group" style="width:117px">
             <button class="btn btn-info btn-sm" type="button" ng-click="vm.ordenar('colaborador')" ng-class="vm.sortKey=='colaborador' ? 'active' : ''">Colaborador</button>
@@ -255,7 +254,6 @@
     </thead>
     <tbody>
       <tr dir-paginate="cadastro in vm.cadastros | filter:procurar | filter:vm.filtrarColaborador | filter:vm.filtrarEntrada | filter:vm.filtrarOrigem | filter:vm.filtrarAplicacao | filter:vm.filtrarDevice | filter:vm.filtrarStatus | filter:vm.filtrarProblema | filter:vm.filtrarIdFreshdesk | filter:vm.filtrarIdAluno | filter:vm.filtrarData | filter:vm.filtrarDiagnostico | filter:vm.filtrarResposta | filter:vm.filtrarObservacoes | dateFilter:dataDe:dataAte | orderBy:vm.sortKey:vm.reverse | itemsPerPage:100">
-        <td>#</td>
         <td>{{cadastro.colaborador}}</td>
         <td>{{cadastro.entrada}}</td>
         <td>{{cadastro.origem}}</td>
