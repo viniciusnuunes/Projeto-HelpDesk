@@ -254,7 +254,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="cadastro in vm.cadastros | filter:procurar | filter:vm.filtrarColaborador | filter:vm.filtrarEntrada | filter:vm.filtrarOrigem | filter:vm.filtrarAplicacao | filter:vm.filtrarDevice | filter:vm.filtrarStatus | filter:vm.filtrarProblema | filter:vm.filtrarIdFreshdesk | filter:vm.filtrarIdAluno | filter:vm.filtrarData | filter:vm.filtrarDiagnostico | filter:vm.filtrarResposta | filter:vm.filtrarObservacoes | dateFilter:dataDe:dataAte | orderBy:vm.sortKey:vm.reverse">
+      <tr dir-paginate="cadastro in vm.cadastros | filter:procurar | filter:vm.filtrarColaborador | filter:vm.filtrarEntrada | filter:vm.filtrarOrigem | filter:vm.filtrarAplicacao | filter:vm.filtrarDevice | filter:vm.filtrarStatus | filter:vm.filtrarProblema | filter:vm.filtrarIdFreshdesk | filter:vm.filtrarIdAluno | filter:vm.filtrarData | filter:vm.filtrarDiagnostico | filter:vm.filtrarResposta | filter:vm.filtrarObservacoes | dateFilter:dataDe:dataAte | orderBy:vm.sortKey:vm.reverse | itemsPerPage:100">
         <td>#</td>
         <td>{{cadastro.colaborador}}</td>
         <td>{{cadastro.entrada}}</td>
@@ -272,4 +272,5 @@
       </tr>
     </tbody>
   </table>
+  <dir-pagination-controls max-size="5" boundary-links="true"></dir-pagination-controls>
 </div>
